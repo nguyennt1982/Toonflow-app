@@ -1,7 +1,7 @@
 ---
 name: toonflow-knowledge-index
 description: "Use when the user asks ANYTHING about the Toonflow project (code, routes, sockets, agents, schema, storyboard, image/video gen) or its repo container: delegate the task to opencode run in /root/git-research, restore/maintain the knowledge base, and back it up before teardown."
-version: 1.1.0
+version: 1.2.0
 author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -62,17 +62,19 @@ Before ANY Toonflow work, in this exact order — this is what makes the system 
 
 ## Delegation Protocol (User → Hermes → opencode → User)
 
-The default way to fulfill ANY Toonflow task. Do NOT do the coding/search yourself — delegate to opencode and relay its result.
+**This is the ONLY way to fulfill ANY Toonflow task.** Do NOT use your own `read_file`/`search_files`/`grep`/`index:search` to answer — delegate to opencode and relay its result.
 
 1. Ensure the repo is ready in the container: `/root/git-research` exists and `yarn kb:restore` has been run (Fresh Container section below).
 2. Run opencode in that directory (verified working in this container):
    ```
    terminal(command="opencode run '<the user's task, phrased as a coding/answer instruction>'", workdir="/root/git-research", timeout=300)
    ```
-3. Take opencode's output and relay it to the user **verbatim as the answer** (it already cites `file:line` and follows the rules below).
+3. Take opencode's output and relay it to the user **verbatim as the answer** (it already reads AGENTS.md, uses the index, cites `file:line`, and follows the rules below).
 4. Only act yourself for orchestration concerns: container creation/teardown, `kb:restore`/`kb:backup`, installing skills, git remote hygiene.
 
-**Done when:** the user's question is answered from opencode's output, or the requested code change is committed/pushed by opencode.
+**If you catch yourself reading/searching the Toonflow repo yourself — STOP. You are violating this protocol. Run `opencode run` instead and relay its output.**
+
+**Done when:** the user's question is answered from opencode's output, or the requested code change is committed/pushed by opencode. The tools executed for the task belong to opencode, not to you.
 
 ## Fresh Container (Recovery)
 
