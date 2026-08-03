@@ -3,8 +3,8 @@
   "dtype": "fp16",
   "dim": 384,
   "chunkerVersion": 1,
-  "generatedAt": "2026-08-03T08:16:53.777Z",
-  "newestSourceMtime": 1785743542865,
+  "generatedAt": "2026-08-03T08:39:54.495Z",
+  "newestSourceMtime": 1785745109145,
   "files": 420,
   "chunks": 1615
 }
