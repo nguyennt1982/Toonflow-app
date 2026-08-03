@@ -30,6 +30,24 @@ The container is **ephemeral** (Hermes-created sandbox): anything not pushed to 
 - The user modifies Toonflow source and the knowledge base needs re-syncing.
 - A Toonflow container is about to be torn down and its knowledge base must survive.
 
+## Mandatory Bootstrap (step 0, non-negotiable)
+
+Before ANY Toonflow work, in this exact order — this is what makes the system automatic:
+
+1. **Work from the repo directory.** `cd /root/git-research` (or clone there first if missing). The whole session MUST run with `/root/git-research` as its working directory.
+2. **Read `AGENTS.md`** in that directory. It is the single source of truth for the retrieval/maintenance protocol. If you skip this, you WILL guess wrong (raw greps over the tree time out and miss files — e.g. `src/socket/` exists but a tree-wide grep can miss it).
+3. **Verify the index is fresh:** run `yarn index:check`. If it prints `STALE` or `NO_INDEX`, run `yarn index:generate` (~15s) once.
+4. Only then start answering or editing.
+
+## Rules (non-negotiable)
+
+1. **Never raw-grep the whole source tree for code questions.** Tree-wide `search_files`/`grep` over `/root` (with node_modules) times out and yields false negatives. For "where is X defined / used": grep `grep -i X .opencode/index/code-index.txt` (fast, precise) or run `yarn index:search "<english query>"`.
+2. **Scope any file search to `/root/git-research/src`** — never scan from `/root` up.
+3. **Read the answer, then open the real file** at the hit's `file:line` for full context. Cite `file:line` in replies.
+4. Domain questions → read `docs/business/03-agent-orchestration.md` first; schema/endpoints → `01-data-model.md` / `02-routes-map.md`.
+5. After editing source: `yarn index:generate && yarn index:embed` (+ `docs:routes`/`docs:data-model` when routes/agents/schema changed), commit, push to the fork.
+6. Before teardown: `git add -A && git commit && yarn kb:backup`.
+
 ## Key Facts
 
 | Fact | Value |
