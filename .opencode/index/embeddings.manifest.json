@@ -1,0 +1,2111 @@
+{
+  "formatVersion": 2,
+  "chunkerVersion": 1,
+  "model": "all-MiniLM-L6-v2",
+  "dtype": "fp16",
+  "dim": 384,
+  "generatedAt": "2026-08-03T08:16:53.777Z",
+  "newestSourceMtime": 1785743542865,
+  "files": {
+    "data/modelPrompt/video/seedance2Multi-parameterMode.md": {
+      "hash": "057e0562d226a72b6194653d53df999d178598fa",
+      "storeFile": "c0c82a5b9969738ef6d6d6b1bbac6b8c97281bb4.json",
+      "chunks": 14
+    },
+    "data/modelPrompt/video/universalFirstAndLastFrameMode.md": {
+      "hash": "c4533248e119bc91be7d205294ef16f78fbf8157",
+      "storeFile": "77e829c07a50ed56c32e3dc7ab24781fe042b6aa.json",
+      "chunks": 5
+    },
+    "data/modelPrompt/video/universalMulti-parameterMode.md": {
+      "hash": "0ded14ec38d30aa4dea9fd5b8fbf1b712b1ce70b",
+      "storeFile": "fbf8c4afd2e38a95039ee25116e3327168cc6e61.json",
+      "chunks": 5
+    },
+    "data/modelPrompt/video/wan2.6Single-imageFirstFrameMode.md": {
+      "hash": "6c2d1f86afedbdab8c1cb00fe2023f808786804d",
+      "storeFile": "1dad5b5dd1d91db08c750254b4da3667804ad0da.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/README.md": {
+      "hash": "c6c1d1d131c13f42d4969f961cc5ead56de3e73e",
+      "storeFile": "fea5fac5747e8cd6ab5274f02a3ebddd71f31fc8.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_character.md": {
+      "hash": "3b9b97e3f0b66271f1c3f5d19cf810b440345325",
+      "storeFile": "ae52e88f9d17de5b41df515c33dec7cc22e930d0.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_character_derivative.md": {
+      "hash": "633559fa73c76183dbe1bcfa587b70474ff374b2",
+      "storeFile": "17b3724deaef9e2a9a1542642c2b8fce0bb20e10.json",
+      "chunks": 11
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_prop.md": {
+      "hash": "ea6638a6d6d78559ffcc0e97df2c751a0ea7f618",
+      "storeFile": "d7e5c69ab49ce4fb9450d61f24d9199396c03803.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_prop_derivative.md": {
+      "hash": "cebe652be950164069d786e51cc8bbcd052bef7d",
+      "storeFile": "c0bdf41f493656d7be95606aee118413734affcc.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_scene.md": {
+      "hash": "41c2ef564ea8940e53c903c5dc4a7c14ffa9b36c",
+      "storeFile": "0d958991ad9f6a97c6bd4e4f7d724112fcb45088.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_scene_derivative.md": {
+      "hash": "7126a05d8e262d08be75574e6298f21ba9ad40c0",
+      "storeFile": "68689c6d616e507965b0413212d3f2d4f0b665c1.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/art_prompt/art_storyboard_video.md": {
+      "hash": "57df712cc816d757d735ed9dc8bfc7285f52fa13",
+      "storeFile": "fc8520492726931d02d8c240650644742e7be6db.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/driector_skills/director_planning_style.md": {
+      "hash": "01ae25057f96bc54b4575ad6f2a474e946225cfb",
+      "storeFile": "f645d2632b734dcd2c6046a3faee560db359eab2.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/driector_skills/director_storyboard.md": {
+      "hash": "52a1d0d7e2780c80de394161fc005d91f9486895",
+      "storeFile": "ad080bd8c265cccc8bc93e9aec36c9f1db873e5f.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/driector_skills/director_storyboard_table_style.md": {
+      "hash": "39a710381d207a1c99e241779230225fb42bec7a",
+      "storeFile": "56d7634fdc1619a8d2f0fb2bee542a8d1987af47.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/2D_90s_japanese_anime/prefix.md": {
+      "hash": "2aa46a8f5378b5a3903be4aeb2c2424ed3c17b66",
+      "storeFile": "842eb64fd17daebfeeadafcf247c3a45240bceae.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/README.md": {
+      "hash": "eb66e83220218d5c4f6d6ddf97a6fce80c694961",
+      "storeFile": "9fa5a1bae5e8166760e57fbac3a166dd3f9cd2c0.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_character.md": {
+      "hash": "c8b3d63f0e434cf6d8e2fd355ddce39c2359b6a1",
+      "storeFile": "4a5e80527ed409e8b3bcbbc6b5901bd26c3ef190.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_character_derivative.md": {
+      "hash": "7d7086a2c55fb9a5ef512147b02cced3768fcea2",
+      "storeFile": "41e6743e58a28207501ee51bc2a80f87dd474174.json",
+      "chunks": 12
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_prop.md": {
+      "hash": "0b2bd92d25fd6761edc8ca126adc5de070acdfdf",
+      "storeFile": "96c8408724022ad13ca9c4e87c718df9078d3926.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_prop_derivative.md": {
+      "hash": "942ac50b98245a37e0b43874aadb83269554aa7b",
+      "storeFile": "962008fa9220b0c49077f92248f27ff572c115ed.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_scene.md": {
+      "hash": "ccb284cf9cc1baac49d27a5b4f0a355f398d1e28",
+      "storeFile": "375083aa672bd8d038a3d9e09377405fb2a13392.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_scene_derivative.md": {
+      "hash": "ceeb1cfe4d1ed6373f7f1655c1db49ee8398b071",
+      "storeFile": "2f63d0ca5bbfa54e64b8065d0ea4c90c48437118.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/art_prompt/art_storyboard_video.md": {
+      "hash": "a0767b17d51ce15e97cb063a3fd71ff65369bf5b",
+      "storeFile": "5e3c682d04412bb9ed0599fb8798d016d44315c8.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/driector_skills/director_planning_style.md": {
+      "hash": "48ddcad06af0604d50f72192f89bb2aaf9063f1f",
+      "storeFile": "092e7bd36d7fc513db6b2ba22e8d03dbb84edc8a.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/driector_skills/director_storyboard.md": {
+      "hash": "c09b59c94bbfb7ac8f373da7eda7f1b664a03b51",
+      "storeFile": "75c969312693915486d8a74fc899f6b2a65400a4.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/driector_skills/director_storyboard_table_style.md": {
+      "hash": "cd52cb70e3b7c3685ae4bbae3aeae43f996a1fb6",
+      "storeFile": "ad45cbaacd76dd6d595b0013649864b51f3d734d.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_chinese_guofeng/prefix.md": {
+      "hash": "37bdaf1e2253afddfd4f7168bdf45872daa15ace",
+      "storeFile": "ff4f43b21e7bcd84e820dcd2b87f1a9e01891a82.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_flat_design/README.md": {
+      "hash": "0d6eab94731120fc55be497974411f59e96c94d7",
+      "storeFile": "30d0ec8828618e76ba26ded27b2e3a6c9f35a242.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_character.md": {
+      "hash": "a366fbb5e9309432d6b1b49095371e939c3b4ced",
+      "storeFile": "c2026c47ff232ad2d62eb4322af64e77b852d9fd.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_character_derivative.md": {
+      "hash": "2aa62d6853a07f7c7dd64640df202f52d46c93ea",
+      "storeFile": "f321b3648211facc2db3116f175d75cee4016375.json",
+      "chunks": 12
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_prop.md": {
+      "hash": "03ea53f1d396d01c7245193a8199efa14c46c2f9",
+      "storeFile": "43d3af9a9fc60a1a4801388068a1fa30f932b016.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_prop_derivative.md": {
+      "hash": "599c2b3e49bad64c2a5d33f29ce4826ce896c752",
+      "storeFile": "174eb05994de0789b624c8fa47aafca2d7f81ff2.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_scene.md": {
+      "hash": "c9209b4d0638e8675cf32ec03890783f38533bbc",
+      "storeFile": "ddc0782e5cb32acb87bd7caa2f09a463c42e31fb.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_scene_derivative.md": {
+      "hash": "2d0b58e9ee1d63fb28b33989bd06610b35a3dadf",
+      "storeFile": "d07ea8665349781ec9dd07cb0d726deff8821fd5.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_flat_design/art_prompt/art_storyboard_video.md": {
+      "hash": "69f1ee6c765885069cd2f6f42ec60b5d2bd829d9",
+      "storeFile": "df40738d9dffc3185826971f7cbe1ef812c58e0e.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/2D_flat_design/driector_skills/director_planning_style.md": {
+      "hash": "24b137510905429a4f65f7fb779cbef1b13ae561",
+      "storeFile": "72918d9d2fcb48c244bedb471f1563a34ef62bb3.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_flat_design/driector_skills/director_storyboard.md": {
+      "hash": "2bee017931bdff8e9e3298112edb67082d6212db",
+      "storeFile": "8344bb958e213da1f00f24439a0f851449319021.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_flat_design/driector_skills/director_storyboard_table_style.md": {
+      "hash": "218999cd12ee738ab2fc71d384eb8abddb407968",
+      "storeFile": "2de6b63858d3858eb06f76c39b1a7fc446fa9c8b.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/2D_flat_design/prefix.md": {
+      "hash": "775813b7e47f037f7f803d61aa5d4f4da2742f46",
+      "storeFile": "de26d114a5cf21b39fcac0ad2e41b8b792f23c0b.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/README.md": {
+      "hash": "ca3d7edfc8f86ca0cd47e484345b568b231b57ab",
+      "storeFile": "545ef98ff1c9690458f04de0cf4cbfb1d2d42677.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_character.md": {
+      "hash": "06c04644c825aca8a6d622126f82657381f5c5ae",
+      "storeFile": "e53023d2e4690258dc0a17db52d014d30ecd09ae.json",
+      "chunks": 8
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_character_derivative.md": {
+      "hash": "80741553f8b8a98a8af649732920f3afe54a82f0",
+      "storeFile": "f52d6e7c89cd128d2e1f6df51598a66e1078eac7.json",
+      "chunks": 15
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_prop.md": {
+      "hash": "1a8163c935fb0a564e2e314c1cd37e74aea37111",
+      "storeFile": "131bba9d407f300de8fdad755f9d95d01dd5c2fa.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_prop_derivative.md": {
+      "hash": "e684649e1bfafdf5ef7f46c9d22b7fd66608bd8e",
+      "storeFile": "356e4ea5d3107ebb033fa74371f0d8f2e6d14ec8.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_scene.md": {
+      "hash": "b4f83334225f30a8a0a74f86d9ad9a72910f2350",
+      "storeFile": "b11fbb184b6c61f1c1fb4d7b6e5f0e9bae961adf.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_scene_derivative.md": {
+      "hash": "4712d113482360f42369ca4fba191c78fad9e5ae",
+      "storeFile": "742900fd77e5f1e3f288cb2bbd3396c0884bb0a5.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/art_prompt/art_storyboard_video.md": {
+      "hash": "a98218d5614d0506e5875aba80dbc37714b7c26c",
+      "storeFile": "c184e77482ac272c7f2b5d62d99c5b39568567c5.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/driector_skills/director_planning_style.md": {
+      "hash": "63aff20e2f0d8fe06965cc181e93a3b0d7d0d24e",
+      "storeFile": "7a1d9069300e22feacad901019a5892e9bfe2ba3.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/driector_skills/director_storyboard.md": {
+      "hash": "4e60b854fb6a027982ef66452327deeb51766438",
+      "storeFile": "3dd855477e9ceea53fa6a60f8bc0037db4426477.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/driector_skills/director_storyboard_table_style.md": {
+      "hash": "cce41e4bfc1702f6f8f78196b13ecd3a3142f199",
+      "storeFile": "9008bf9a43690ae40e4e994144427443b16f9fee.json",
+      "chunks": 3
+    },
+    "data/skills/art_skills/2D_mature_urban_romance/prefix.md": {
+      "hash": "f2f809ea040fcb01dffd95373f815ab781b3c9c9",
+      "storeFile": "198b3fc02fbcc08aa91dd3adb097bba98c02f6d7.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/3D_anime_render/README.md": {
+      "hash": "4f9213d064131ab4635887790e6ae4407e955a6d",
+      "storeFile": "70f25fc64031daaaca09403405da1ef2884b7e06.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_character.md": {
+      "hash": "bbf3803886d8b8deb7e97369d6f8933b2a54d2b8",
+      "storeFile": "6d113267178f898d4fe2e4b1d5d9b7b45a7be62e.json",
+      "chunks": 8
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_character_derivative.md": {
+      "hash": "ae5204b53faeb9c224e53df73185de58a11599a7",
+      "storeFile": "555b87ad5c6ef74e5f86d5fbddd6884a0e68a911.json",
+      "chunks": 13
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_prop.md": {
+      "hash": "57d591f279ea07eda8a40e5393faeec56cf86a3a",
+      "storeFile": "e8784798bc4e8afbfdfef4d8379a0caf24a4cba7.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_prop_derivative.md": {
+      "hash": "5f00c23c15c0402015551c2cce505d624f4b6dd4",
+      "storeFile": "1bfdc80d13fcf7921192c5017c394e28c0c561cb.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_scene.md": {
+      "hash": "dd4a257853caf295f1579e64742475eed6276b51",
+      "storeFile": "5b66d24f4628b319e01f82ff54bfcd974fc795ff.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_scene_derivative.md": {
+      "hash": "acc8ddd1863898937a23fee11fc8bc06c7a6e6f3",
+      "storeFile": "33a4a63b0103f921c67a654f65eeb828c84611ad.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/3D_anime_render/art_prompt/art_storyboard_video.md": {
+      "hash": "34f48a05eb885da2eb05dc24358808fbc351f72d",
+      "storeFile": "30cd0d18dd7aed911a358f1dd1ac64ba52c55c55.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/3D_anime_render/driector_skills/director_planning_style.md": {
+      "hash": "ea8c78f872e4c283630797449844df449183cbb9",
+      "storeFile": "e9dc35b96669720f3e44c6b3c587f844edfc08a7.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/3D_anime_render/driector_skills/director_storyboard.md": {
+      "hash": "1477d6f4998519e9e5f0127526d1007264b73f0e",
+      "storeFile": "25c33cec411eb0bdf23b9cc39bf2df92e5f5f91b.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/3D_anime_render/driector_skills/director_storyboard_table_style.md": {
+      "hash": "669fc7cc883a03525648701e5ed36a6b513b2b57",
+      "storeFile": "a7f86b358ef5f2df78f21d9dbebbc546e9f73641.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/3D_anime_render/prefix.md": {
+      "hash": "c9e90c212a4a358f1ed8fa26026ce35cd84c84e8",
+      "storeFile": "4240a11b434d7aad5671e6327f96d80d6bc389d0.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/3D_chinese_traditional/README.md": {
+      "hash": "33ff9d4a247422ae9acfdbc674cfac5033f95db2",
+      "storeFile": "8e3594a190206bb0596ea75e654b9242fb6a8270.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_character.md": {
+      "hash": "196abc2bd83fd368254c783150bf30b73c36c3de",
+      "storeFile": "1959d56ec3f46fb4d3b56dc79f3b091487fab44e.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_character_derivative.md": {
+      "hash": "db88700f8125bc1162011ad3cec4f032b83d1f76",
+      "storeFile": "6789e6ecac6b680dabe10347d1f6577a5c5cf045.json",
+      "chunks": 12
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_prop.md": {
+      "hash": "3e8521012c5f06c8b757f45c56f4930964dcce74",
+      "storeFile": "d75a53fcf936f0859060cfab1e5cc947c0574d9a.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_prop_derivative.md": {
+      "hash": "167f3f978499043a9d8dc7c66a4eb4737b01d320",
+      "storeFile": "dfc7abb6a51502372b735287a014833503b5ccb8.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_scene.md": {
+      "hash": "de58894f24034a6a698fc6465e5ae759daf5f83d",
+      "storeFile": "b70fff21a606233215612c84c58d3730fc270c63.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_scene_derivative.md": {
+      "hash": "392d2eba1d32ca6e6bcb738bb6af0dbb13e453c1",
+      "storeFile": "fa879ed9bed6229fc5ebc2751cd6dc8a3de78d93.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_chinese_traditional/art_prompt/art_storyboard_video.md": {
+      "hash": "8373b2eab93748a66fbd19d4468b33ed1c9554c8",
+      "storeFile": "8aae7ddbc6e1a474dfe30217525d990f58ee18da.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/3D_chinese_traditional/driector_skills/director_planning_style.md": {
+      "hash": "6b6a7085b7b08e79c6a433c6f5b05bed58050b23",
+      "storeFile": "9eb6b4aa8a76171ae3e5b5c744ebd5115ee05dc7.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_chinese_traditional/driector_skills/director_storyboard.md": {
+      "hash": "d6c604415873be9390b9e2eb2307e8fea76d53b1",
+      "storeFile": "2a428618ca3d4e92c1fa7a9cb2662d1fd19bcec9.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/3D_chinese_traditional/driector_skills/director_storyboard_table_style.md": {
+      "hash": "cd6c90f5402175c1f6c66d797e3244fe825fe2f8",
+      "storeFile": "3fc4c64db8659ff3c878d88e924ba65125d74a99.json",
+      "chunks": 3
+    },
+    "data/skills/art_skills/3D_chinese_traditional/prefix.md": {
+      "hash": "d38c3b6d53542b7ff69dc1d047f5da01508f7d56",
+      "storeFile": "726c44de40999f61cf566e825adfec2e5c4e36d9.json",
+      "chunks": 3
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/README.md": {
+      "hash": "1e5f48af1bae67549f9208c3f4e2ac97268e2c4a",
+      "storeFile": "cdfca3d281b93a6974a4acfe541a5e5bec37948c.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_character.md": {
+      "hash": "58b0673195d3abf3dc8f6c2d9b4749bb06988a9c",
+      "storeFile": "e061dfb7b956c02bee8cad52893cfbf3bd44367d.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_character_derivative.md": {
+      "hash": "602fe2d7a908e5d60c693fa5a1dec0d84ce5e897",
+      "storeFile": "8cc78cb25247e7495b4c0ca2b7e3782865d31e9c.json",
+      "chunks": 9
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_prop.md": {
+      "hash": "b6386f74c0e8d39a6edd2cc72f11403ff71b25c7",
+      "storeFile": "d19de7f53e1e8527800c2bb9df66d6a6ecd95c88.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_prop_derivative.md": {
+      "hash": "4afee4c551d05f27555e8f46670b0b0028ff3010",
+      "storeFile": "4119d6c0009e6b20e55e4c222b703accdebc4ad5.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_scene.md": {
+      "hash": "4026206eb76c45d11eec1a49e7107c73d21bf1ea",
+      "storeFile": "b63f7874864a6cf2dedf80deaf515ae35941f9f5.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_scene_derivative.md": {
+      "hash": "2c20e7f829758ba9b2dd2fb23eac97bd828d0d1c",
+      "storeFile": "309958d0699466693af58d07359dc5a8871a4aa3.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/art_prompt/art_storyboard_video.md": {
+      "hash": "e5e4d045b5a511284aa6f7ee015d5da641396f39",
+      "storeFile": "5d88c00c43aa60e476b1cc9e5e556ecba5ea9596.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/driector_skills/director_planning_style.md": {
+      "hash": "02764a41eb6bf0879039cff947053a66f5466d67",
+      "storeFile": "10a1aa958ca3128d2afd4727dfc4f37205321ae7.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/driector_skills/director_storyboard.md": {
+      "hash": "bd448a98bcd751bcf2da5ec3bcecbcbe4191cbed",
+      "storeFile": "72ee5a84d6445af35a7d3e648d7688241a97512f.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/driector_skills/director_storyboard_table_style.md": {
+      "hash": "3e9401d5e30188172f701be2c3264b85fdbf80a9",
+      "storeFile": "d5773a8e5a507380327d4e891a4ed03c9fac23fb.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/3D_clay_stopmotion/prefix.md": {
+      "hash": "c4d937bcd61225cff0539d2ce7ccaf1dad1fd691",
+      "storeFile": "418aeea2db2b39c6b5244f5439304159016469fe.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/README.md": {
+      "hash": "c5991acd81f6090e2f0d5053d433b246a09efa0e",
+      "storeFile": "aafc086b06312cedf5cc294f509d115dcf3df2e3.json",
+      "chunks": 10
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_character.md": {
+      "hash": "3c7894c429088000108c41ed52c529a0572ede5e",
+      "storeFile": "1b0a78a5c1f94b70b96e77cebc80102991014822.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_character_derivative.md": {
+      "hash": "5b4c56fad85cf2e0cdfc03d4b1bb616605d3e245",
+      "storeFile": "5ea284d3359233520dca0b05cf7749854a1887c4.json",
+      "chunks": 31
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_prop.md": {
+      "hash": "96943ffadc83f46836a642378c1ec1a8fe908e2a",
+      "storeFile": "40761b2dd71aab4fb36c42132b5c4da1035de147.json",
+      "chunks": 16
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_prop_derivative.md": {
+      "hash": "e910d798ba963c252c23fb3e54d26d7ed3e5f109",
+      "storeFile": "3681c255618c3754c4f49f7536deb78badcca048.json",
+      "chunks": 9
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_scene.md": {
+      "hash": "f10a70a3f08109d332deb5f45f001cdb6b96550b",
+      "storeFile": "fdf307bb78f4fc23b5ccbd9304dc2b32685cce5e.json",
+      "chunks": 16
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_scene_derivative.md": {
+      "hash": "3f543c7343fbcc13a76bf4cc70ab70102c04e0df",
+      "storeFile": "7ae34192a9746c1bf440c4f26a2273533f763462.json",
+      "chunks": 14
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/art_prompt/art_storyboard_video.md": {
+      "hash": "682baa0f0a7da2d50192c5b9086f17547c6ed1b2",
+      "storeFile": "aec987d3f98ed84dee61ff7df2ff7c6720421c20.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/driector_skills/director_planning_style.md": {
+      "hash": "8fafb20578411ada1a170e213911ac1e72e3609f",
+      "storeFile": "47d13b762e1effc7565294c0693f58dde179978c.json",
+      "chunks": 14
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/driector_skills/director_storyboard.md": {
+      "hash": "b8e3c58d75eb28ba21ac15477de383de2e103444",
+      "storeFile": "05912e9c856d4c16b41635e81fd40be609df80db.json",
+      "chunks": 18
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/driector_skills/director_storyboard_table_style.md": {
+      "hash": "300ea1efcd445dfccdf6d3e9954c2458b65bf03c",
+      "storeFile": "88a4d470119ca275b8f6045a627ab4f8d2f53c8c.json",
+      "chunks": 9
+    },
+    "data/skills/art_skills/3D_guofeng_cyber/prefix.md": {
+      "hash": "59a995e0bed32b0e0ed0d31cb73318964be5be41",
+      "storeFile": "40f3049518d332b2bba7b8690d39633bf0fa450a.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/README.md": {
+      "hash": "38a5689d34b00ae158354a863f213489dc03e999",
+      "storeFile": "bdb869edbaae395702ae5a56352359e5cc0805b8.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_character.md": {
+      "hash": "dbc8607d9c61139e478711a5bbcad91431d20362",
+      "storeFile": "b4660740865bc7e2569593e51885c91bc67ae69e.json",
+      "chunks": 8
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_character_derivative.md": {
+      "hash": "f94cdecb5fe7c217bb53e0dc085f7dcaaced2ca5",
+      "storeFile": "73b17c9138eb355e509d35efe3ab26246a22a3a5.json",
+      "chunks": 13
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_prop.md": {
+      "hash": "28e928de709d70ebb57c0fabb8e1c5a221d88d7f",
+      "storeFile": "0d3645795ca601fa4d090cbd78f932df5cd29e9e.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_prop_derivative.md": {
+      "hash": "ed5ae3e0907425a9599faef0424b2045d357437f",
+      "storeFile": "a6cadf626525848a74252fd1617b7ecb2364d4e0.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_scene.md": {
+      "hash": "7da36ef36b70892248e65d28692d8e0196571ef8",
+      "storeFile": "43184ee5dc947af1479adf94c73a6d010632d32f.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_scene_derivative.md": {
+      "hash": "678a4918e2c93943bc62495d45a2865145a8d246",
+      "storeFile": "e37c46a9eaa6e96e36ab9d6e491767ced8322fc4.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/art_prompt/art_storyboard_video.md": {
+      "hash": "86905e0a9ff88b60b86e00bce0c5914aa5f215e9",
+      "storeFile": "bc2b902c1dc90e76e3a107b627515faade2ae5e6.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/driector_skills/director_planning_style.md": {
+      "hash": "a04bddd7154d17922cc84871ac35571cc7f66173",
+      "storeFile": "26a00a0d29667e8ea4181e5057a460ee7acc8de6.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/driector_skills/director_storyboard.md": {
+      "hash": "86cd7d5ea9f8dbf807e9e5e7c5008b20172b2367",
+      "storeFile": "e7363eafd28de03ef553347d86a66a6f5565b09e.json",
+      "chunks": 10
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/driector_skills/director_storyboard_table_style.md": {
+      "hash": "90a77993c91dffc293fde77b04ace7353d7ce432",
+      "storeFile": "00f7a7dea73da8d8523bba8513771cd326155a1e.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/realpeople_ancient_chinese/prefix.md": {
+      "hash": "091f45276ed59d063e9a172d5468a7f7cfd9587a",
+      "storeFile": "f639c01e1a5f6f358a9d327c6175a8a244b6ae09.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/realpeople_modern_city/README.md": {
+      "hash": "09efd504ac76666d3fda689451687a2a18cc11b0",
+      "storeFile": "2fe548efbbfb071f45b092498368813ec26af7d9.json",
+      "chunks": 16
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_character.md": {
+      "hash": "c80cc84191a6d15df39db763a3b0e33b380a3d05",
+      "storeFile": "93199090b33a7f44bd27fd3450ba603a3e422891.json",
+      "chunks": 20
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_character_derivative.md": {
+      "hash": "90b4a22e15ecc5a3e6de7f1b683195d811a6df78",
+      "storeFile": "2382822b4a14779810fe921af68ee5c2e9510cdd.json",
+      "chunks": 21
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_prop.md": {
+      "hash": "87854d6417ba4e1aa6c8c1eb263b12572ba008c1",
+      "storeFile": "965ca338af6cb026790ba88e093993fb3ed0fd98.json",
+      "chunks": 12
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_prop_derivative.md": {
+      "hash": "f778fad776a3bf393dcd0e73a74cceaebc5447ed",
+      "storeFile": "09380c6b491c660437c3c233c0a7befe22c7a59c.json",
+      "chunks": 10
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_scene.md": {
+      "hash": "4d9d1407a970645cd7b976812a9ce24471978498",
+      "storeFile": "60e9db3c311c511f9020caa3b77a70244e2fcbcf.json",
+      "chunks": 14
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_scene_derivative.md": {
+      "hash": "0dc8f5516c5011314c79ac82fb74b7b675ff48b7",
+      "storeFile": "21ef76b388b159f4e873056b37aea43753352452.json",
+      "chunks": 11
+    },
+    "data/skills/art_skills/realpeople_modern_city/art_prompt/art_storyboard_video.md": {
+      "hash": "54703485fad762ca4a1bba5ae9397cb4f655e1cc",
+      "storeFile": "d405b99e3a9d7582028fbf27b86f2d7a5313233d.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/realpeople_modern_city/driector_skills/director_planning_style.md": {
+      "hash": "a6734b9b482d4877403c7d6c93d09c57dc0193bd",
+      "storeFile": "022395315d596901b6abc3610b5e9e3080827d6f.json",
+      "chunks": 14
+    },
+    "data/skills/art_skills/realpeople_modern_city/driector_skills/director_storyboard.md": {
+      "hash": "9c2cbcd7ecf039281673bb2d08302cab8d460830",
+      "storeFile": "9063d5b13784c22f49fb50a0781e4a5559194ada.json",
+      "chunks": 13
+    },
+    "data/skills/art_skills/realpeople_modern_city/driector_skills/director_storyboard_table_style.md": {
+      "hash": "3955db529d979fe45fd0d98df4652b189cd47b10",
+      "storeFile": "bd79cd8a24181401a0c2f86deddf90f5d1edf455.json",
+      "chunks": 14
+    },
+    "data/skills/art_skills/realpeople_modern_city/prefix.md": {
+      "hash": "01f1c732b6f05f015457c61af62b2a5d3d4de71d",
+      "storeFile": "f94996d9243bf395972cfb421aef031b35915f0b.json",
+      "chunks": 9
+    },
+    "data/skills/art_skills/realpeople_urban_modern/README.md": {
+      "hash": "44ff7153672b1161787a2de4d5b8757573f79623",
+      "storeFile": "e02d3eb7ba97cf1c8e953093b791097d7e31a5a8.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_character.md": {
+      "hash": "1e67f7a4db9b97d11ed6fa1fe7d367b89f470d87",
+      "storeFile": "c8c8528242c27b2d51f39b70fa26ab3eece87939.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_character_derivative.md": {
+      "hash": "8e19ca37ba7827dfd03c950bbf3f71121fcb5cbe",
+      "storeFile": "91b3cc3ae7ababb15363202f38da2bccedaef699.json",
+      "chunks": 11
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_prop.md": {
+      "hash": "1a23b727adc5443157b2b2aabc5ed2b35e81e425",
+      "storeFile": "c5ff77c8bc2aa8d202526dc1a02f89b2df5a80c1.json",
+      "chunks": 5
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_prop_derivative.md": {
+      "hash": "564113a4e68dd48a24630d0307c729f33c04f78f",
+      "storeFile": "d2794eafe84d1ca4b17d14d78373db52faeb3fa3.json",
+      "chunks": 3
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_scene.md": {
+      "hash": "016421eef657a0d45a242cf916f961ffd21c3f8b",
+      "storeFile": "a974a219f5098bb239b4cfe0dafd495d6a3f9e8f.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_scene_derivative.md": {
+      "hash": "c0eaa59a409fb93a4d1464907fd3597daa391846",
+      "storeFile": "6a9db4e560046d1026b457235e05b386f5e4405d.json",
+      "chunks": 6
+    },
+    "data/skills/art_skills/realpeople_urban_modern/art_prompt/art_storyboard_video.md": {
+      "hash": "2fb599f1ba4315bdf69ff83b06622d8e24b18882",
+      "storeFile": "bedf7120c4bc27fcfb0bb40c7ee347f8c2e3eff5.json",
+      "chunks": 1
+    },
+    "data/skills/art_skills/realpeople_urban_modern/driector_skills/director_planning_style.md": {
+      "hash": "aaf6f329f922d2a4b5592c917c311b0e3e4b81d8",
+      "storeFile": "b4be2da6d690d274ae2886782ad37a3d9ec23488.json",
+      "chunks": 4
+    },
+    "data/skills/art_skills/realpeople_urban_modern/driector_skills/director_storyboard.md": {
+      "hash": "a7b4e3cdac2fe46b3cbd741eb6b13a62d42c3ece",
+      "storeFile": "382d144651b116d1ef5ca10ae79114dc6b5d6590.json",
+      "chunks": 7
+    },
+    "data/skills/art_skills/realpeople_urban_modern/driector_skills/director_storyboard_table_style.md": {
+      "hash": "75cb4554d8c364de3a10dfe744073a67d2edc0e9",
+      "storeFile": "a4945733e47beb1cf0d3824187e0db79f8475469.json",
+      "chunks": 2
+    },
+    "data/skills/art_skills/realpeople_urban_modern/prefix.md": {
+      "hash": "49e4716e9cc5d2b6ab7374e15d9711092e5518de",
+      "storeFile": "46bcbec5abc64803778d9997ea3807c76da33995.json",
+      "chunks": 5
+    },
+    "data/skills/production_agent_decision.md": {
+      "hash": "cadb1e235ce81b6344d42145d294cc4fed9f48e5",
+      "storeFile": "f2bede4575c84ce153f7601a5822f22f99d0051b.json",
+      "chunks": 8
+    },
+    "data/skills/production_agent_supervision.md": {
+      "hash": "4635054bb2a66fc9672342ea40d77661d8805740",
+      "storeFile": "c35d3db5a5c60fc59cce94df6ed8c09b5fb5885b.json",
+      "chunks": 15
+    },
+    "data/skills/production_execution_derive_assets.md": {
+      "hash": "ff75f49aa5de19c5399f3e78a0043418041f6eaf",
+      "storeFile": "59a27beb1fa9b250767282cff6d392eef8aeb3d3.json",
+      "chunks": 5
+    },
+    "data/skills/production_execution_director_plan.md": {
+      "hash": "def32676ea568606f41f214c6403d40c900ca081",
+      "storeFile": "b58e84d72a211b059aa8fe1652cdb329d3b430fe.json",
+      "chunks": 9
+    },
+    "data/skills/production_execution_generate_assets.md": {
+      "hash": "9fcd7625cb7de1a684dc50e7409b5da08327d394",
+      "storeFile": "f0a31bc6eacb55a09ed7403f55fbd662956a2041.json",
+      "chunks": 1
+    },
+    "data/skills/production_execution_storyboard_gen.md": {
+      "hash": "a5bec10eaa15fac923e409de9f99aa94422b6538",
+      "storeFile": "c607d0918621bc25ff472d801a8d6bc83d480830.json",
+      "chunks": 1
+    },
+    "data/skills/production_execution_storyboard_panel.md": {
+      "hash": "b1d276fcfb7964c54bcafd691ab7183d08fb0521",
+      "storeFile": "4ee7982145da86df36f052e30f33ea1fcc0b9b05.json",
+      "chunks": 10
+    },
+    "data/skills/production_execution_storyboard_table.md": {
+      "hash": "47d67bdd689a352675383a85ba63d7d3e81b5390",
+      "storeFile": "cedb5b50ee6f0d67bb2ee1235b06174f3784d91c.json",
+      "chunks": 11
+    },
+    "data/skills/production_skills/storyboard_prompt_techniques.md": {
+      "hash": "21737ada9f349da5bebde7bbcda13b7e80c70374",
+      "storeFile": "44137bbba32c4c3bf461767f108b78a176365665.json",
+      "chunks": 21
+    },
+    "data/skills/production_skills/storyboard_table_techniques.md": {
+      "hash": "a79519b0ce24667d876546bacfc47ddd4fe3075a",
+      "storeFile": "828c7eee4caeed5c4ccef928a9eb324fed299631.json",
+      "chunks": 12
+    },
+    "data/skills/script_agent_decision.md": {
+      "hash": "b1423d38719f9148c2284a55d2b5e82854ce3b44",
+      "storeFile": "0148bb4201e7f8e4bf21e09f854a1c78b410f5ab.json",
+      "chunks": 9
+    },
+    "data/skills/script_agent_supervision.md": {
+      "hash": "a64a3f6d8a1287da18255feb2c6c5fc2c8b445d0",
+      "storeFile": "83ac16617df4a1277076e8da19b41c8c78554f5e.json",
+      "chunks": 16
+    },
+    "data/skills/script_execution_adaptation.md": {
+      "hash": "f977c81c58f99634c6f17a65cc1ea330cb788048",
+      "storeFile": "bfeac48af5faed4d6f3acb97a9c58d81389edc9e.json",
+      "chunks": 10
+    },
+    "data/skills/script_execution_script.md": {
+      "hash": "765fadd0cdbda99ac10248247d1375c881975891",
+      "storeFile": "7e4eb2143e9bf168c5a98aaaea925d9883fa9830.json",
+      "chunks": 20
+    },
+    "data/skills/script_execution_skeleton.md": {
+      "hash": "6df03b3c3ae34a05b6dddd9d588044673e14b396",
+      "storeFile": "d355ac1a80c763597e7770b48ed824c97e5a419c.json",
+      "chunks": 22
+    },
+    "data/skills/story_skills/Comedy_humor/README.md": {
+      "hash": "d8ed8f201514f95812c4f7b12044ccbccb357461",
+      "storeFile": "1ea4f4b9edb2a1d5f3c52a9f87f77830cd06d679.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Comedy_humor/driector_skills/director_planning_narrative.md": {
+      "hash": "735614d91a1fb3ee9c759f2d06fa375f4b5a06ca",
+      "storeFile": "652f2eae8243b9bd03ebbc08942c7f437059bb8c.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Comedy_humor/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "f067efe7133705bdca7c52057a867350918de4c3",
+      "storeFile": "de84e877d08cde0da4932b7e1785fa4fbf4f7120.json",
+      "chunks": 6
+    },
+    "data/skills/story_skills/Coming_of_age/README.md": {
+      "hash": "fafbc3faa52245f2f9707e11e3d4b666f3b33576",
+      "storeFile": "b7862003e0ee4d14de7ed1b0250df5e9b04873fb.json",
+      "chunks": 2
+    },
+    "data/skills/story_skills/Coming_of_age/driector_skills/director_planning_narrative.md": {
+      "hash": "dbbf11ec812804cf107b3771bbe29aedffd6cacc",
+      "storeFile": "48e5baa4daf4a05ad9e526edf0ce66b6493c0be2.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Coming_of_age/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "ba8c3c3b8e77e865d717488ea24912b2465d5675",
+      "storeFile": "24f863346e2ed745b59a5324a6ccc346dff8724c.json",
+      "chunks": 6
+    },
+    "data/skills/story_skills/Family_warmth/README.md": {
+      "hash": "4a4e9567af13adbec15f074632b413a276682407",
+      "storeFile": "656c725261475e435862405ec9b827c9feb3779a.json",
+      "chunks": 2
+    },
+    "data/skills/story_skills/Family_warmth/driector_skills/director_planning_narrative.md": {
+      "hash": "16b00231294c878d489c210b18ac8b7f0ab7a487",
+      "storeFile": "3a84174279d08a7e20b4a7a5e768c1083c21b4fe.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Family_warmth/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "75884bcc03bb8cbc2d8b75a45f7e47706b0812c2",
+      "storeFile": "8da0b308b7fbcb28fee9840483f9eab2e56a0777.json",
+      "chunks": 5
+    },
+    "data/skills/story_skills/Historical_epic/README.md": {
+      "hash": "f001d3e85f3b7fca260385c747af2d6052e938e9",
+      "storeFile": "f5df575827f07311148d994c728cade8fd94b176.json",
+      "chunks": 2
+    },
+    "data/skills/story_skills/Historical_epic/driector_skills/director_planning_narrative.md": {
+      "hash": "ff1a45e2e226c115b42b735f686d0bd7d4bcafe6",
+      "storeFile": "847b8454d6de493cc54da3f4db32b22e7de25cc1.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Historical_epic/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "c363d9315a0808e569f896bf753c179c9f3680e0",
+      "storeFile": "c2a431e16a669e1544ea508c5fcba122fbfd671f.json",
+      "chunks": 5
+    },
+    "data/skills/story_skills/Horror_supernatural/README.md": {
+      "hash": "830bb030de5cb5baa38ec5844d38aa51b0e04625",
+      "storeFile": "e9ad59524e21da30da3ecb0a0279e9f1d2b76678.json",
+      "chunks": 2
+    },
+    "data/skills/story_skills/Horror_supernatural/driector_skills/director_planning_narrative.md": {
+      "hash": "15822e5c8db36117279833086d1d8235ec94f5e5",
+      "storeFile": "392749a0119ebbeecd3c45674a4592281e2b1b01.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Horror_supernatural/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "9cc988439d3075bbb0a752209b6f2c1f0b948ef1",
+      "storeFile": "c966a882fe8ed2577780f9f18fc29c4497cbb619.json",
+      "chunks": 5
+    },
+    "data/skills/story_skills/Hot_blooded_action/README.md": {
+      "hash": "16f6541ac19d4510bb6df3583b8f8866bfffad5d",
+      "storeFile": "57e2c139d25d12a3b07e7c5640d0180f7c6c97c3.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Hot_blooded_action/driector_skills/director_planning_narrative.md": {
+      "hash": "25ee1726ade545103e4bf1fee4b35553f1ee3d7b",
+      "storeFile": "38e8fd7ec159fe280db43286b9774b9b5dca70c5.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Hot_blooded_action/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "51e33e694188e615663ff6f6146f96f95da60d3e",
+      "storeFile": "a9622014b62dd8cc8a15473f4958738eb23ae198.json",
+      "chunks": 5
+    },
+    "data/skills/story_skills/Mystery_thriller/README.md": {
+      "hash": "05047836ee28fac675eceedda42134b4fd3bad77",
+      "storeFile": "b6a9197c7fe00a793aa2436c4e47ddc082795c6f.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Mystery_thriller/driector_skills/director_planning_narrative.md": {
+      "hash": "559153a918f3ea8ec24bf582c73637f033529238",
+      "storeFile": "1721c8e62dea2e6e88fbf3cd6688e32cd4ba1b0a.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Mystery_thriller/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "f47c26377f56150e1ee2970ada567eece90b6fe6",
+      "storeFile": "de9b44c5183b386244b8bfa210bedf52e7733b73.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Psychological_drama/README.md": {
+      "hash": "1ec313c0e7bf57f7af4838db12c3e2db17fb9f5b",
+      "storeFile": "eb5277084655ae64bb0dd55295d5081e4159f1d1.json",
+      "chunks": 2
+    },
+    "data/skills/story_skills/Psychological_drama/driector_skills/director_planning_narrative.md": {
+      "hash": "f93f977b3356c14db35f52284b084c833d99c6ef",
+      "storeFile": "0e9fc8b2158d530788d0b6fa5a678d70f9ac5150.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Psychological_drama/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "608eb927f1a595d6a2f2b6bf277c3dc981cd26b4",
+      "storeFile": "a9503b8ff968dc1ac1cb982a3ff9cae570ce3236.json",
+      "chunks": 5
+    },
+    "data/skills/story_skills/Scifi_post_apocalypse/README.md": {
+      "hash": "ccc6549178df26526987878cec8d9bba009b6627",
+      "storeFile": "d3ff66e40e4e799f1487d43f522f91573bbee20a.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Scifi_post_apocalypse/driector_skills/director_planning_narrative.md": {
+      "hash": "fdd304021058ff59c84c1d993f5bbb009386b72b",
+      "storeFile": "a54ef1eacc024a0547a7a416295777c962cd9f9e.json",
+      "chunks": 8
+    },
+    "data/skills/story_skills/Scifi_post_apocalypse/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "0140f4b536e7a7ed359a88ca2af56abe17d2ec59",
+      "storeFile": "e296084e33889cdbcfb4174264140cfc06050e58.json",
+      "chunks": 6
+    },
+    "data/skills/story_skills/Sweet_romance_novel/README.md": {
+      "hash": "0f4d102efa95b94f0a691f2cf971dc5447418a06",
+      "storeFile": "580815aed9cec0ba9c4476bc534ba954ea8dd72c.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Sweet_romance_novel/driector_skills/director_planning_narrative.md": {
+      "hash": "a65393aa0fbe8cfcc40af6c2a3150d102e1802e5",
+      "storeFile": "9ff8d10a8bdca6e3879ec3b465f74d7c38665870.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Sweet_romance_novel/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "9ed08b74b83845f28ceddedc92c9b8a5922f8b63",
+      "storeFile": "dfc757cef3b76e53a262c7c234bc65bf01173047.json",
+      "chunks": 4
+    },
+    "data/skills/story_skills/Urban_workplace_drama/README.md": {
+      "hash": "fc72632e8db713fe59e02c62f340d161940680b0",
+      "storeFile": "2fde1f89759fb169430de43e9800e2e45158dd66.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Urban_workplace_drama/driector_skills/director_planning_narrative.md": {
+      "hash": "dcb835255a14d5d2cf7a071372a9995f372b0844",
+      "storeFile": "38cddab37c34257d7c1a8bb18c3779ec08d947d8.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Urban_workplace_drama/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "41ea2e75e1c28d100f85002c78c3b225dd70e9eb",
+      "storeFile": "2d89bb25fbd28ec65e1b29e370721095aae5031e.json",
+      "chunks": 6
+    },
+    "data/skills/story_skills/Xianxia_fantasy/README.md": {
+      "hash": "24b259d849e0da602d0108e07a04826dca5bebae",
+      "storeFile": "4e7e18553f39d21d727b6d30c59b71fbe63704f3.json",
+      "chunks": 3
+    },
+    "data/skills/story_skills/Xianxia_fantasy/driector_skills/director_planning_narrative.md": {
+      "hash": "9a14f18e1299651fb269043dbd521c5a7c5ebdcc",
+      "storeFile": "27139c52cc89b82bf787cfc2a6b11a160a267b90.json",
+      "chunks": 7
+    },
+    "data/skills/story_skills/Xianxia_fantasy/driector_skills/director_storyboard_table_narrative.md": {
+      "hash": "5ad9d2aa915789357bf0af49a1e4dc9b318bee7d",
+      "storeFile": "36b2bd27ab150908ea3167844fd94ff7c1772dbe.json",
+      "chunks": 6
+    },
+    "data/vendor/atlascloud.ts": {
+      "hash": "f648cbed28296dd72f418cea35d56672b4b27df6",
+      "storeFile": "19f8a7d5ea98f1b83104960dfadd30e27c414517.json",
+      "chunks": 7
+    },
+    "data/vendor/deepseek.ts": {
+      "hash": "7f49d57176ac3e107afccdfbb00266208080b63c",
+      "storeFile": "9dbf1ff06ef039268a89d15fd9d668f990e12886.json",
+      "chunks": 2
+    },
+    "data/vendor/grsai.ts": {
+      "hash": "5dd48b0cc6f9b6f525740ee9024d8f44bc9450c7",
+      "storeFile": "34426bc6d13cb3a277a040e70e9063242d5007c9.json",
+      "chunks": 5
+    },
+    "data/vendor/klingai.ts": {
+      "hash": "799831610910e90bcf8facd233adeff0980789c9",
+      "storeFile": "51ed7760ff798c2a3e2c9610f9befffe597a708d.json",
+      "chunks": 7
+    },
+    "data/vendor/minimax.ts": {
+      "hash": "9fa46c10b64552fa4b296b44533f1dfb1b4aeeb4",
+      "storeFile": "f39bb627ac8bcfe8f7bbec665ebd59682d9b13db.json",
+      "chunks": 5
+    },
+    "data/vendor/null.ts": {
+      "hash": "13eb9977bd8931305918231aeda6365c7bab4e1d",
+      "storeFile": "48ebea6444af1f9a99f2c49d32e1a990ab5717d5.json",
+      "chunks": 8
+    },
+    "data/vendor/openai.ts": {
+      "hash": "f7e4b281227bfe5bef26c26b66b2a14cae0b7f43",
+      "storeFile": "ac21431eabb7df209414ed515aa683632e43867c.json",
+      "chunks": 2
+    },
+    "data/vendor/toonflow.ts": {
+      "hash": "c5835291bfafcaed6aa8c6fc9d35d0bc0de86254",
+      "storeFile": "ba2eb15dbc626e1941f74224fd053c2936a39121.json",
+      "chunks": 8
+    },
+    "data/vendor/vidu.ts": {
+      "hash": "b7b20dc16fe167e4a688940134b036573d641ed8",
+      "storeFile": "b2adf953ad64786c70edb281ce2c98b3672e09e5.json",
+      "chunks": 5
+    },
+    "data/vendor/volcengine.ts": {
+      "hash": "3b3e357c7ff3836acf87424118f20518d7fcdaff",
+      "storeFile": "d948c440bfd67952d577e160589c195c4dfaf8bc.json",
+      "chunks": 7
+    },
+    "data/vendor/volcengineSd2.ts": {
+      "hash": "7c5f3f54fa556756e83e7cf15ec17a2ce1b85c57",
+      "storeFile": "bea7bb06fbfa6dd27c28049c2d32600daf46ebf9.json",
+      "chunks": 8
+    },
+    "scripts/better-sqlite3.d.ts": {
+      "hash": "91faf3a8ca3be2d475744712fd37eb3bb2180998",
+      "storeFile": "02485bcb1546977262d58ace86bbf3c040bef673.json",
+      "chunks": 1
+    },
+    "scripts/build.ts": {
+      "hash": "ff7ae6f3576f279ca9d9afa872ca59935bcb09a6",
+      "storeFile": "3e70cdc42c8a45e448e9a3184a967564967c6c36.json",
+      "chunks": 1
+    },
+    "scripts/check-index-stale.ts": {
+      "hash": "65a0fa365086adece649037ffeca7611b9315a30",
+      "storeFile": "d792fdee63e688c7ad2ec30a969b117483f66b0a.json",
+      "chunks": 1
+    },
+    "scripts/generate-code-index.ts": {
+      "hash": "e2fc87f47501e950d01304bc4c7784f94a256529",
+      "storeFile": "5ed05141e2639d3c600b0e60af1705506e858878.json",
+      "chunks": 2
+    },
+    "scripts/generate-data-model.ts": {
+      "hash": "4d93ee947480149e0f07f5bafac235f3fc9985fb",
+      "storeFile": "028a70f62b9842e28b60c2a4ce7d3cca1259e2f8.json",
+      "chunks": 2
+    },
+    "scripts/generate-embeddings.ts": {
+      "hash": "ca07346ed7164a9a34399aa84342a2805a49cd20",
+      "storeFile": "435efebd5eab39ee506bf2adebc023d5c2095b4e.json",
+      "chunks": 3
+    },
+    "scripts/generate-routes-map.ts": {
+      "hash": "db54c96632577d84944968dba87871ed1d32f47e",
+      "storeFile": "338dc8d7837a52c2245ef24c59fbdcaebb14cfbd.json",
+      "chunks": 2
+    },
+    "scripts/license.ts": {
+      "hash": "56dfcbadafbf45906110715b0ea52ebd8ad640f4",
+      "storeFile": "582f1d6e82b20b172e447ed0258aeccf68408ac9.json",
+      "chunks": 1
+    },
+    "scripts/main.ts": {
+      "hash": "1ce982df939a5f17a11744f2068fc810e665f6ef",
+      "storeFile": "ccdc92c616f79ec6c5ef931d520b4f61f6812459.json",
+      "chunks": 3
+    },
+    "scripts/search-code.ts": {
+      "hash": "3e1ce581d1a412b4ce10a61367e565a40b321406",
+      "storeFile": "1b5340fd6da39ec3340ebc5e274f2dde3a242f7b.json",
+      "chunks": 1
+    },
+    "scripts/vendor2json.ts": {
+      "hash": "0fd7166e00e9c36b93d1e359051a589ccc986691",
+      "storeFile": "4ddfa5ca123a37d9b9476df9feb346e1ca09437c.json",
+      "chunks": 1
+    },
+    "src/agents/productionAgent/index.ts": {
+      "hash": "e9723554456c683c17cbceb073c7be46ff0b5dac",
+      "storeFile": "cf62e07a55cc9e4a41490a4c55ef3968dd0be1ff.json",
+      "chunks": 6
+    },
+    "src/agents/productionAgent/tools.ts": {
+      "hash": "7cc02affc258b536019fc15d7c5d7fa65f161df8",
+      "storeFile": "2ff2c7774d017e5b563b49ab7bb38da21ebea0d3.json",
+      "chunks": 4
+    },
+    "src/agents/scriptAgent/index.ts": {
+      "hash": "0a18bdcec736b150c766f9278ec3ff913c5ccbdf",
+      "storeFile": "aa6d5226155859ad4bd8c8fc2da066d0cc78a658.json",
+      "chunks": 3
+    },
+    "src/agents/scriptAgent/tools.ts": {
+      "hash": "8403d6c9356b7e418310c09024dd7648b5e2820e",
+      "storeFile": "d862320f955c397dc5c2cf7bfcd9a43351edc3cb.json",
+      "chunks": 2
+    },
+    "src/app.ts": {
+      "hash": "4c5bb774debd817a40a5309d475a427c073fdbdb",
+      "storeFile": "216381173f187cf4c2baf119193855699f4bc616.json",
+      "chunks": 3
+    },
+    "src/core.ts": {
+      "hash": "cb255890c0fe43fb0eb34683383c416a3bbe89d8",
+      "storeFile": "f431fdbcd14421f2c1caf4e9cb1e2f700ffc07c8.json",
+      "chunks": 1
+    },
+    "src/env.ts": {
+      "hash": "aed5c6049c0d0e145b74a455ce70b104bc2818cb",
+      "storeFile": "3686f5d5678859d2f6664283e1cb93e6b6408619.json",
+      "chunks": 1
+    },
+    "src/err.ts": {
+      "hash": "61dc118eeaccd8d12c1d17b39ec347ec8232e2cf",
+      "storeFile": "fd52074f8eabd7f0a0ee843b6a16535800eb22b9.json",
+      "chunks": 1
+    },
+    "src/lib/fixDB.ts": {
+      "hash": "bff0fe7f7ffed4220123c2c7bbbc1e7d824cf3e6",
+      "storeFile": "d9dd6d0d9499747aae48ecdcf57bbc364160f8a7.json",
+      "chunks": 8
+    },
+    "src/lib/initDB.ts": {
+      "hash": "4ff0b0aa1b03e697238bef2a17b796b936384caf",
+      "storeFile": "eda0ae154b3e276faa1d9f0982133b4071d7d66a.json",
+      "chunks": 17
+    },
+    "src/lib/localhost-comfyui.ts": {
+      "hash": "1cfacfc69a8554e148fb831fd742de3bf2609ff5",
+      "storeFile": "29248bdc055f418d3290fa424d788a48390b331e.json",
+      "chunks": 7
+    },
+    "src/lib/localhost-llm.ts": {
+      "hash": "aa5dff8a670a60dfe75b10bd6d44f0f75f2ae3f2",
+      "storeFile": "569802c36add9ab8ddcd22907862a8e022dd3004.json",
+      "chunks": 3
+    },
+    "src/lib/localhost-migration.ts": {
+      "hash": "1f03ef1d6a5ce9aa5ffc22a68422fa900d5cbcf6",
+      "storeFile": "dfc6b2025654d836f41f8572686454cd214cd33e.json",
+      "chunks": 3
+    },
+    "src/lib/responseFormat.ts": {
+      "hash": "bc2e58aff44c9ee629b993e6202fa340fd2220bd",
+      "storeFile": "82a89349ca312ed37c02eaff42122d66004f8c5f.json",
+      "chunks": 1
+    },
+    "src/logger.ts": {
+      "hash": "ffb10b3d206557674f6ba1461d99b02bf3f8f561",
+      "storeFile": "7ca9a636a596c112d44b016b333b6ba550b7820b.json",
+      "chunks": 2
+    },
+    "src/middleware/middleware.ts": {
+      "hash": "4d24d1b749140179283329665faa868ec55451cc",
+      "storeFile": "40ca49e89d1a686ab2ad3c7e6992e396465a27c4.json",
+      "chunks": 1
+    },
+    "src/routes/agents/clearMemory.ts": {
+      "hash": "15adc5451918f623b395c5df58d963c1d1c42ea0",
+      "storeFile": "7420b4a46028c8f5b7485391ac661d70c9698490.json",
+      "chunks": 1
+    },
+    "src/routes/agents/getMemory.ts": {
+      "hash": "bb092db6aa22ca0a7ac636ae03f3153e0286626b",
+      "storeFile": "709783cea1afbb58a8e3e61faa20b7c991887b48.json",
+      "chunks": 1
+    },
+    "src/routes/artStyle/addArtStyle.ts": {
+      "hash": "3a2e62ca3b0fce9deb8edeb37e80088b505f19f5",
+      "storeFile": "9e080d5080e50b944866916257af0971c5550476.json",
+      "chunks": 1
+    },
+    "src/routes/artStyle/editArtStyle.ts": {
+      "hash": "925764d3c25cd93be1cb8d1201c0f98ef3020fe3",
+      "storeFile": "45ff2dc3368a186cb27da132673aeb5322a7cfef.json",
+      "chunks": 1
+    },
+    "src/routes/artStyle/extractStylePrompt.ts": {
+      "hash": "041dae6baa55c9939a1c22a452fe9f58bffe3d06",
+      "storeFile": "138b15ba17e9eecf74c0f7f24742c92a9d838727.json",
+      "chunks": 1
+    },
+    "src/routes/artStyle/getArtStyle.ts": {
+      "hash": "7adec8c76bb56c7e08c441f7d31fdc20d7f499bf",
+      "storeFile": "30d0a4f24c01ae58c760ef1989b64238f2783259.json",
+      "chunks": 1
+    },
+    "src/routes/assets/addAssets.ts": {
+      "hash": "3d6deb5cf6f9a9b68c36b32c5bb94fff198bcb83",
+      "storeFile": "0f70f5c7cbe45da4e1f1c88320bc56cc9e16192e.json",
+      "chunks": 1
+    },
+    "src/routes/assets/addAudioAssets.ts": {
+      "hash": "1566f87d78511677f819fcd5c080aa77078b6617",
+      "storeFile": "4e66986f84980bf6d53a5c05a830052072a8ca64.json",
+      "chunks": 1
+    },
+    "src/routes/assets/batchDelete.ts": {
+      "hash": "1f3c823c6123b2604463510b55edcb82599ebd89",
+      "storeFile": "91ad5ade85364651c0af80e9a69defb4cfbbd1e6.json",
+      "chunks": 1
+    },
+    "src/routes/assets/batchGenerationData.ts": {
+      "hash": "0bb86f3efaaee506018da7edd83a83c2e8d96a5f",
+      "storeFile": "272e58066ddf99d7d9da30ec195f90f01ca27af0.json",
+      "chunks": 1
+    },
+    "src/routes/assets/delAssets.ts": {
+      "hash": "a913e75881ad602e51ac1d5cf474a33041c1a52f",
+      "storeFile": "f374a1e90bf15425a906755bd43cd336ee7b5973.json",
+      "chunks": 1
+    },
+    "src/routes/assets/delImage.ts": {
+      "hash": "8fdb17c88fc2c74def4e7787689480e5777dc9a4",
+      "storeFile": "c3910a87866f681d672f522aed5d6267d21199f9.json",
+      "chunks": 1
+    },
+    "src/routes/assets/getAssetsApi.ts": {
+      "hash": "78b5ebef1a391e3979f1ae77957f1f2b6401bfd0",
+      "storeFile": "af86e55cc8a015fbe6b2816c4f37090aa830e5e1.json",
+      "chunks": 1
+    },
+    "src/routes/assets/getImage.ts": {
+      "hash": "826fe2e88bd70bd8a8477a2ce9cfe5e2a272ec8c",
+      "storeFile": "753bdec6124369e8d2c6526c0deedb42733863d2.json",
+      "chunks": 1
+    },
+    "src/routes/assets/getMaterialData.ts": {
+      "hash": "f056b7aa5e234b493482b9a961507cb7227ff4ff",
+      "storeFile": "8137b5c78f40cba78b3c70bfa5103e08c9158837.json",
+      "chunks": 1
+    },
+    "src/routes/assets/pollingImageAssets.ts": {
+      "hash": "20f7416d8fff791bd214bfeaeb1a187f44c4289a",
+      "storeFile": "86efed2a56ff02658cfc5ef7650ce938b41cc897.json",
+      "chunks": 1
+    },
+    "src/routes/assets/pollingPromptAssets.ts": {
+      "hash": "ff945073b39f0cfb20f93890e743b18e970cf508",
+      "storeFile": "e08ea7fe9bb818019a6b85ecad4033c20189de91.json",
+      "chunks": 1
+    },
+    "src/routes/assets/saveAssets.ts": {
+      "hash": "7b396cd528d067cf3aff58d229976a22ea430bfc",
+      "storeFile": "97807487e704802ac1b34f70129a5b55b181f4d9.json",
+      "chunks": 1
+    },
+    "src/routes/assets/updateAssets.ts": {
+      "hash": "56d3267d64197df0bbb2eede18494421b6cd45a6",
+      "storeFile": "ec41da0692ec02358a95a2e2c775ab525efc6bf7.json",
+      "chunks": 1
+    },
+    "src/routes/assets/updateAudioAssets.ts": {
+      "hash": "60a803a7af57896f20176e529ede48cd0a444f35",
+      "storeFile": "c24b2da0d0abb5817e44f8d3e42a03e4a13b0713.json",
+      "chunks": 1
+    },
+    "src/routes/assets/uploadClip.ts": {
+      "hash": "4d3d862ba499d396a7d1001571b827fd5e394382",
+      "storeFile": "b5b87563d3783ec290f9d0dd1630fc91287f0670.json",
+      "chunks": 1
+    },
+    "src/routes/assetsGenerate/batchGenerateImageAssets.ts": {
+      "hash": "4bd58e1e85eeef2c95790efb139c295989908d9b",
+      "storeFile": "eb0b315e0e1ece549d8ae0dccc133b2e4acc6d60.json",
+      "chunks": 2
+    },
+    "src/routes/assetsGenerate/batchPolishAssetsPrompt.ts": {
+      "hash": "c7cc832df9149706da0068cbbc61ce979623a974",
+      "storeFile": "d864fc5c942149e848378eda0ef98e9321b05071.json",
+      "chunks": 2
+    },
+    "src/routes/assetsGenerate/cancelGenerate.ts": {
+      "hash": "cc63f5fbde57221fdd42379ebba3bb5f595ee0d8",
+      "storeFile": "911793d70d42719c479a682996721aeb05f22473.json",
+      "chunks": 1
+    },
+    "src/routes/assetsGenerate/generateAssets.ts": {
+      "hash": "f85e1cd6fddb407ddae25aa78a548126dcc3c377",
+      "storeFile": "ff9c2606960a8ff366d7db0bd93b47278f4bd158.json",
+      "chunks": 2
+    },
+    "src/routes/assetsGenerate/polishAssetsPrompt.ts": {
+      "hash": "d29adda9ddb01546d56eca7fa0c3132a7d6b88d4",
+      "storeFile": "148a1e82abf0991d3b636bbd3ecdd48b5aaeb675.json",
+      "chunks": 1
+    },
+    "src/routes/common/getBigImage.ts": {
+      "hash": "887bbdb678921de348447ba98ea16a2f88c08447",
+      "storeFile": "55f68d4066e808464ff7d609c68cce72fb18fdef.json",
+      "chunks": 1
+    },
+    "src/routes/cornerScape/batchBindAudio.ts": {
+      "hash": "5c3fcdea750db3d30b1aba5ebec0f61f9b606aca",
+      "storeFile": "9d0b0fc7f6d9b4bc507187f1a457afa657f5734b.json",
+      "chunks": 1
+    },
+    "src/routes/cornerScape/getAllAssets.ts": {
+      "hash": "be8b6dacddb281275a7f83094139edbef0b2666d",
+      "storeFile": "ebb15c1810c5201edba814bacc84a097d79b3c2b.json",
+      "chunks": 1
+    },
+    "src/routes/cornerScape/pollingAudio.ts": {
+      "hash": "8248a75f475d4be46bf8ddc405d9fd7526404491",
+      "storeFile": "ff0996ccfecbb202371e5cc36480d4511a4c86aa.json",
+      "chunks": 1
+    },
+    "src/routes/cornerScape/updateAssetsAudio.ts": {
+      "hash": "04d77d774939d012cca276d4f01083c2a8637204",
+      "storeFile": "0e02786417e462b7388464ea482033745b46816a.json",
+      "chunks": 1
+    },
+    "src/routes/general/generalStatistics.ts": {
+      "hash": "5258d9f5188e8f82ea418a78af56e3ffca37820d",
+      "storeFile": "37ad129893f89d56b7e605db291ecfd58d010eb3.json",
+      "chunks": 1
+    },
+    "src/routes/general/getSingleProject.ts": {
+      "hash": "9ba7c3e21e566a3f2c61084655ec952c504b60b8",
+      "storeFile": "eb7861dd39ca968b2b54dfd73b21a86f08ec6270.json",
+      "chunks": 1
+    },
+    "src/routes/general/updateProject.ts": {
+      "hash": "d45f1e3eb18104c6724fc9306071e5794b6b2a13",
+      "storeFile": "f495c8c4783c2c7c165d7dd6b91d03cb6b1b29b3.json",
+      "chunks": 1
+    },
+    "src/routes/login/login.ts": {
+      "hash": "92b3dc3239937e68c5ca6976645eca55ba3984ae",
+      "storeFile": "6a61e89ff46ba74530d593d933159f99a1dc73f6.json",
+      "chunks": 1
+    },
+    "src/routes/modelSelect/getModelDetail.ts": {
+      "hash": "0cddfb911655dcb3241b358da5c3a4b7e4ca042c",
+      "storeFile": "fe5125d71b1fbfe61bcfe8b66f8bd0719884f7ba.json",
+      "chunks": 1
+    },
+    "src/routes/modelSelect/getModelList.ts": {
+      "hash": "e2310472c3cf99639e0def8a148bc47278cd7c1a",
+      "storeFile": "e53d16fffc9bedd6a995a1a816b00137a51d6a45.json",
+      "chunks": 1
+    },
+    "src/routes/novel/addNovel.ts": {
+      "hash": "e939efa5b5e3b78870a9182630da46457ba5c618",
+      "storeFile": "3ac0b511bf3a3b6bd6ac870d832542eb52fe54ee.json",
+      "chunks": 1
+    },
+    "src/routes/novel/batchDeleteNovel.ts": {
+      "hash": "fdf62edf1e6badf70cb75238ca419454ec204037",
+      "storeFile": "2eee72101b36feb3e36d8fa8df412396bad7d386.json",
+      "chunks": 1
+    },
+    "src/routes/novel/delNovel.ts": {
+      "hash": "5aaf4f6a8de1e37df4819434e64cc6097b48313a",
+      "storeFile": "77270ac58ab6adf1bb8c3a3ee432372e045c0bbc.json",
+      "chunks": 1
+    },
+    "src/routes/novel/event/batchDeleteEvent.ts": {
+      "hash": "5a87bff65479d6b26d470bea27851cd622a3c318",
+      "storeFile": "ee7744e87ea8926a8cad11365a5ae33be59bab09.json",
+      "chunks": 1
+    },
+    "src/routes/novel/event/deletEvent.ts": {
+      "hash": "745871b31461aa35962ca7afe18972f252d0be18",
+      "storeFile": "0a149f7d2d186fc4913e39c7c0fca386670ca9ef.json",
+      "chunks": 1
+    },
+    "src/routes/novel/event/generateEvents.ts": {
+      "hash": "ea393d3a77e0f5093f68f592355d0544adc0e152",
+      "storeFile": "8a125892d64e05dc25401c184ee594a895b44021.json",
+      "chunks": 1
+    },
+    "src/routes/novel/event/getEvent.ts": {
+      "hash": "ebb86a2cbad5abd2249d9e796cb30ae5e1dac9d5",
+      "storeFile": "5a8db984cb24ea36d2ddb13dde1b45e81c40fc52.json",
+      "chunks": 1
+    },
+    "src/routes/novel/getNovel.ts": {
+      "hash": "92ec5c5dd4634777c1d6d6baad4d323479ffece5",
+      "storeFile": "17c5c37b1fdc45e7879fdb3cc54cd933e772b8a2.json",
+      "chunks": 1
+    },
+    "src/routes/novel/getNovelData.ts": {
+      "hash": "dd6e494ad9f43972d8d3e86cd703ac07f8d86da9",
+      "storeFile": "9d40fe49c2787748e7a42a2070aa45289a42aed1.json",
+      "chunks": 1
+    },
+    "src/routes/novel/getNovelEventState.ts": {
+      "hash": "39a1021c3f34162d57d67f8a484ab028545f9f84",
+      "storeFile": "ef70ccf64de3b195f6ced0df8ac59e3a499ba91c.json",
+      "chunks": 1
+    },
+    "src/routes/novel/getNovelIndex.ts": {
+      "hash": "01918fbdb54d1f5a42350165a5c3427098bd9b34",
+      "storeFile": "7bba007c416cbe3a9b3d0b3b671e45704c6cd5dd.json",
+      "chunks": 1
+    },
+    "src/routes/novel/updateNovel.ts": {
+      "hash": "7de823eb16444b51d492cd6ebbbcc1c729b05f9d",
+      "storeFile": "2af6c7b1b240f871b4efba88aebb993276dbe658.json",
+      "chunks": 1
+    },
+    "src/routes/other/deleteAllData.ts": {
+      "hash": "7b978d85c958cb404239ff2fd213ae69a2054a1a",
+      "storeFile": "83f4930f4ea806f069aa7f1b469297b1c38df7d7.json",
+      "chunks": 1
+    },
+    "src/routes/other/getVersion.ts": {
+      "hash": "26d41e9802654e5be976599938e37fd8b434b98b",
+      "storeFile": "5e12184bedf29bc42040571a70dd3aadb395a9c4.json",
+      "chunks": 1
+    },
+    "src/routes/production/assets/batchGenerateAssetsImage.ts": {
+      "hash": "896fec276e15bb396f29d1fee584da18c006535b",
+      "storeFile": "31460e67472117bf40297d6e266d36aca3eed276.json",
+      "chunks": 2
+    },
+    "src/routes/production/assets/deleteAssetsDireve.ts": {
+      "hash": "c677f1ce30704aff10154b6432d68284f189089b",
+      "storeFile": "5d704c8b800cb3ddad77a812a48fc298b8bf9c66.json",
+      "chunks": 1
+    },
+    "src/routes/production/assets/pollingImage.ts": {
+      "hash": "c42fc55aeeb4dad7b834651f5fa9862d93b8dab5",
+      "storeFile": "556eae51006b6fde97d684a218e2b03a5d3e0664.json",
+      "chunks": 1
+    },
+    "src/routes/production/assets/updateAssetsUrl.ts": {
+      "hash": "8a0705f79b096019de591fb4aed160b2a99743b2",
+      "storeFile": "3ab2b25ef8d3c70babd174d9cb755a9b8f481abe.json",
+      "chunks": 1
+    },
+    "src/routes/production/editImage/generateFlowImage.ts": {
+      "hash": "b371beff903441545eb1cbb8d259af7adf9d1c66",
+      "storeFile": "01949ba5d8769e2795e59ebf84ca9ce845ab66bd.json",
+      "chunks": 1
+    },
+    "src/routes/production/editImage/getImageDefaultModle.ts": {
+      "hash": "afae58471984e4f17a95d3086655f4d6a15e4b4f",
+      "storeFile": "fb993e023c16eb612f7ff83e24b69f0b3aa61f3e.json",
+      "chunks": 1
+    },
+    "src/routes/production/editImage/getImageFlow.ts": {
+      "hash": "afdf12884bf6ec8f353802def476642dce054a0b",
+      "storeFile": "2a1da5d4dc4bc68cfe5f98becd3c70f46c846de4.json",
+      "chunks": 1
+    },
+    "src/routes/production/editImage/saveImageFlow.ts": {
+      "hash": "e231ffbff5e0c6eb69442dedea94cd48041f9780",
+      "storeFile": "fc37f532b9bdba33a4896ee3c137791ef3562626.json",
+      "chunks": 1
+    },
+    "src/routes/production/editImage/updateImageFlow.ts": {
+      "hash": "ac8a1ef0838501133e524cf48a913c7fbd8c893c",
+      "storeFile": "cc666cdf6af48640c0f6ec332274f6193f127577.json",
+      "chunks": 1
+    },
+    "src/routes/production/editImage/uploadImage.ts": {
+      "hash": "0555275b794355e3022bea2ff9006cf16ab045cb",
+      "storeFile": "81bce8bb178c50f4f56cbb9c1d63dc8bf6c52e43.json",
+      "chunks": 1
+    },
+    "src/routes/production/getFlowData.ts": {
+      "hash": "ab61dd454688861134224c5b6fe4f49020e9ff5b",
+      "storeFile": "641a1e88a717560243f6d467f3dd28f0b45f0df0.json",
+      "chunks": 2
+    },
+    "src/routes/production/getStoryboardData.ts": {
+      "hash": "476484e11652caa2c577f3491da6463b83a7ee9c",
+      "storeFile": "e006266ffca7fc0ecec05796d8772d3e6c435d19.json",
+      "chunks": 1
+    },
+    "src/routes/production/saveFlowData.ts": {
+      "hash": "8e4ece2496f95a17a43404d308014f92d93cc53a",
+      "storeFile": "d95286851aece255e76393bf1b3b101861974ce4.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/addStoryboard.ts": {
+      "hash": "efcc308ae69345ef81e89f221ca21585202c6b06",
+      "storeFile": "9b772ecc65d9c73cbf25b1bc46ee109d09b645b3.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/batchAddStoryboardInfo.ts": {
+      "hash": "0625d2e247dea0af89189027df08eba4bed81158",
+      "storeFile": "9d5106eb14743530710f2d031967e14e2843c34c.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/batchDelete.ts": {
+      "hash": "6e46de65d47a271ab7c8d621fb89949810ed6efc",
+      "storeFile": "bae7a2978442f3c275cab3e0904e74bcb1381e51.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/batchGenerateImage.ts": {
+      "hash": "716abe9a03468dc18f96746f7494100f75157b26",
+      "storeFile": "a5f6970acf1dcf460e7fc31d774e3f406e7b30c7.json",
+      "chunks": 2
+    },
+    "src/routes/production/storyboard/downPreviewImage.ts": {
+      "hash": "d0acbab94a3ba7c71be87572878f139c25dbb7de",
+      "storeFile": "fbd21aa99895662c27702a0dc5e12bda35ecf067.json",
+      "chunks": 2
+    },
+    "src/routes/production/storyboard/editStoryboardInfo.ts": {
+      "hash": "1f3473bf9e7295764cf5ef1e66556a596fadc17d",
+      "storeFile": "c5de10a5e4a101c2884f28c3ab1d5c6cf2613288.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/getStoryboardData.ts": {
+      "hash": "c3e0feb9c4ae5d7a9eba2609369010b4dc5c5434",
+      "storeFile": "fcf0f188098b1819fddc741f66333daf8919d842.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/pollingImage.ts": {
+      "hash": "2a4a75d0cd4117b962b03985e135e10c8f18bc6e",
+      "storeFile": "01fd1df535f951d38f8ecc89d8a7443cc1dc2481.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/previewImage.ts": {
+      "hash": "609c71b5d80762c30cd5a903d52b3e920dea4d44",
+      "storeFile": "c25cfea39a56d80d05fea4f7e5eca7dab3b5f36c.json",
+      "chunks": 2
+    },
+    "src/routes/production/storyboard/removeFrame.ts": {
+      "hash": "e896d86392feb064ca6eb0cc4a4109dd0e4d6542",
+      "storeFile": "927aae7fd7f73b9d169214994668a7d165d5b395.json",
+      "chunks": 1
+    },
+    "src/routes/production/storyboard/updateStoryboardUrl.ts": {
+      "hash": "13cf9fe2313e365df03652b39dc7f309b26171a5",
+      "storeFile": "b543b6ec13a431aaa2a6742f207a0972fe61500f.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/addTrack.ts": {
+      "hash": "6b4294595227731727ed22c201308b38206301d2",
+      "storeFile": "27bacbfae72375b9fc6a6e21a9caa3d133630257.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/batchGeneratePrompt.ts": {
+      "hash": "f81a8dbc1a3560e9e38d00e47f8cf8992f795ee0",
+      "storeFile": "01bd9b639f98ff21cd1391a34c1ce9e08bc22a23.json",
+      "chunks": 2
+    },
+    "src/routes/production/workbench/batchGenerateVideo.ts": {
+      "hash": "c3c25c761761851b32ebc43101b6d9d1edd4e17e",
+      "storeFile": "1a796ce848a37bb3abd291a6c950507f0d88446a.json",
+      "chunks": 2
+    },
+    "src/routes/production/workbench/checkVideoPrompt.ts": {
+      "hash": "e5ee52d55b022258b7fe7b12bbbadede22853801",
+      "storeFile": "bebe17a713da4dea9d8442ff85b72fe40c5a0a78.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/checkVideoStateList.ts": {
+      "hash": "89e96ecfe40abfbb4bf4b35b6205e84acf1acf73",
+      "storeFile": "cffa05aabb1772543e0a9c8c0380876a67cd9fcf.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/delVideo.ts": {
+      "hash": "3dbdac392a8a8f180debe92e4ba2b7c1a560dce6",
+      "storeFile": "d1c2cf84f5530173efc4340081de8fc9f6d6f3c0.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/deleteTrack.ts": {
+      "hash": "70d449e409ca21863c8fd8c4e98759fe4e83ce7e",
+      "storeFile": "38c864ae80c9c3103125d24dbc8456a18dbc67d0.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/generateVideo.ts": {
+      "hash": "ca2b929d5792b4bb4c1302a3ec59900c03ed5134",
+      "storeFile": "33e3ecb07ae675968b2931b199437dadcb0768db.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/generateVideoPrompt.ts": {
+      "hash": "a9002740a1c9fcd2be2d6cfc427335bf307661a2",
+      "storeFile": "d7bc6f8aeafb715a309acc60bcc1191f4fbf642a.json",
+      "chunks": 2
+    },
+    "src/routes/production/workbench/getAudioBindAssetsList.ts": {
+      "hash": "e15c76934603021a0a1ec7a44acd353261ff9e34",
+      "storeFile": "e1c299dc1e1479d2d412c4024b9284546934fadc.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/getFileUrl.ts": {
+      "hash": "7568439e6e99673bfa33d6353e7dc8ca50688555",
+      "storeFile": "5b31ccb63897402e2b46975334426b50aefee070.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/getGenerateData.ts": {
+      "hash": "f3a66e9a2ce4b1c07d7d76de5608e1bc4898327c",
+      "storeFile": "eac0bed24dc2fe7d89ad349b75d3f94ddfdaf733.json",
+      "chunks": 2
+    },
+    "src/routes/production/workbench/getVideoList.ts": {
+      "hash": "24262257f1a6048adb512725fa016f59f2f58215",
+      "storeFile": "fdf51ed70575fb09dbf4ccd36d725051fc159d59.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/selectVideo.ts": {
+      "hash": "e210de29dfb855c3fcf0806d0f38d9cd76fabf12",
+      "storeFile": "b5d2816f431b558c12bdaa9c6df67b9b8ed2942d.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/updateVideoDuration.ts": {
+      "hash": "33f9e81e615063a8eb3898d93b8ad778b7b72fd5",
+      "storeFile": "0a88087cd710fd9383ac150b47617c45c77034da.json",
+      "chunks": 1
+    },
+    "src/routes/production/workbench/updateVideoPrompt.ts": {
+      "hash": "eb3757c2b8d1abe71112fdf1325a483801f0fd3a",
+      "storeFile": "cdf8deddbd7eb5cfbfa60c339d324378ef818f78.json",
+      "chunks": 1
+    },
+    "src/routes/project/addDirectorManual.ts": {
+      "hash": "b94eb734a5ed643521d073a6382b379d4260fd89",
+      "storeFile": "b4bc6334fccda5729db893c739a3103916470bd6.json",
+      "chunks": 1
+    },
+    "src/routes/project/addProject.ts": {
+      "hash": "4458daa259583286473c00a56727b6cb9845705d",
+      "storeFile": "5eb0b75c338acf58d90067919dc1a006e7eb6b4a.json",
+      "chunks": 1
+    },
+    "src/routes/project/addVisualManual.ts": {
+      "hash": "b74bb0226343ac8f7e28054aff7d7d8863b52e2a",
+      "storeFile": "add91048933ad378c34f1792dba6ab33ba5f616f.json",
+      "chunks": 2
+    },
+    "src/routes/project/delProject.ts": {
+      "hash": "483fceb50adcafe2a9d1d0c4c6f2efb719a98dfb",
+      "storeFile": "c3b0be29848990c85b1b083025ecead05c00514d.json",
+      "chunks": 1
+    },
+    "src/routes/project/deleteDirectorManual.ts": {
+      "hash": "02f4c66aefbd9e79ff40d29abbdedf8be6676e3b",
+      "storeFile": "13a1c9f639f0a023c527e7d826261caae0326be1.json",
+      "chunks": 1
+    },
+    "src/routes/project/deleteVisualManual.ts": {
+      "hash": "40ecc7cae99c4f6336fb99cfb0044a44a2df2331",
+      "storeFile": "bc30bfbb5659aefa5df6c4f7a86c2825ddca380d.json",
+      "chunks": 1
+    },
+    "src/routes/project/editDirectorlManual.ts": {
+      "hash": "c6b4d5fe14001f50898b75ff2c872e8a79228138",
+      "storeFile": "691f13194bf29bed4bd91847b26b4c57165a2dad.json",
+      "chunks": 1
+    },
+    "src/routes/project/editProject.ts": {
+      "hash": "f1a205d4200264d1740a3b24fb7d1b21bcae7bbf",
+      "storeFile": "033871b33f58d1de967fbfd61861d3c456cc5c4b.json",
+      "chunks": 1
+    },
+    "src/routes/project/editVisualManual.ts": {
+      "hash": "8b9aec91c6a212eb188b02c41f4270a8d5ce82c7",
+      "storeFile": "db18ce66a6ca4d4df441608fa4db7d0576a9d3d1.json",
+      "chunks": 2
+    },
+    "src/routes/project/getModelDetails.ts": {
+      "hash": "bb777982a325003603dc4d07a703d710d89f6578",
+      "storeFile": "8fea0383271b885efd5aa9ea4d14f9d5489d49f8.json",
+      "chunks": 1
+    },
+    "src/routes/project/getProject.ts": {
+      "hash": "9fb239ded71a97119065d2af97cf535ed2d32be3",
+      "storeFile": "d00736e61029aef8e795d52aa0bd86c266facfc2.json",
+      "chunks": 1
+    },
+    "src/routes/project/getVisualManual.ts": {
+      "hash": "7701429e0d3043ca1db733bc75119e8c6ee6f58a",
+      "storeFile": "0556ca620aab7a3107e3577ed73bea4d933777cf.json",
+      "chunks": 1
+    },
+    "src/routes/project/queryDirectorManual.ts": {
+      "hash": "bb0fbce03a43f6ba3a86c38f1ed7fdcfcc3b7596",
+      "storeFile": "606799426c4d0a5f73c40478003c869f84fa7a38.json",
+      "chunks": 1
+    },
+    "src/routes/project/visualManual.ts": {
+      "hash": "61db28fbbc603d58a246a2a9e70557681b38fef7",
+      "storeFile": "277834008d9690d8d14c21bc646fec26ba250319.json",
+      "chunks": 1
+    },
+    "src/routes/script/addScript.ts": {
+      "hash": "6f7011c63edfbb9eea1786667c5cc5baef002176",
+      "storeFile": "e5a530b1083d85d8a8fba170cca19b2259261451.json",
+      "chunks": 1
+    },
+    "src/routes/script/batchAddScript.ts": {
+      "hash": "7978b158df11b84e3c8678546afa806ae4efc145",
+      "storeFile": "648a087e08a26c07993fa363b6f014eafad79bd6.json",
+      "chunks": 1
+    },
+    "src/routes/script/delScript.ts": {
+      "hash": "a98722aa52892978a5eeb62ce49473903b496a9a",
+      "storeFile": "069e29109e2efa620155d26883acabe2418074c1.json",
+      "chunks": 1
+    },
+    "src/routes/script/exportScript.ts": {
+      "hash": "a07d248f85e240d7b163be0d23c5c9ca16e1fe49",
+      "storeFile": "547e06a803f9721d4dad1ca7bb106aa2452d423a.json",
+      "chunks": 1
+    },
+    "src/routes/script/extractAssets.ts": {
+      "hash": "d439ad3d6b6f07ed4dccc9f489f214326f46aaf3",
+      "storeFile": "db1bd2a1e1d55ae94aa362ee113c934785d336cb.json",
+      "chunks": 4
+    },
+    "src/routes/script/getAiRegex.ts": {
+      "hash": "2e70e37f8f05e1783d94e53fbba39729d491ddce",
+      "storeFile": "9b502b4ff0e17f1a9574aa83f06453a584ee6428.json",
+      "chunks": 1
+    },
+    "src/routes/script/getScrptApi.ts": {
+      "hash": "b2881ef8960b03b3cd68b05819a0f7b1af44595e",
+      "storeFile": "442e87c8ba4b796f3509e71a63b9983759f40a09.json",
+      "chunks": 1
+    },
+    "src/routes/script/pollScriptAssets.ts": {
+      "hash": "aea002c61d1e9978ac296ac12d279a63b34d97e3",
+      "storeFile": "49c4b72a0216cb18d018b40c72e3c87b97a023d8.json",
+      "chunks": 1
+    },
+    "src/routes/script/updateScript.ts": {
+      "hash": "139c8e8a3b4c4d1caeb8b17cc5b80734fa99fb45",
+      "storeFile": "b875278cbe97da3ebbf1b30a5723b11e3f94ab4a.json",
+      "chunks": 1
+    },
+    "src/routes/scriptAgent/getPlanData.ts": {
+      "hash": "147745b44ed48cdcf350e22c02eb7ba9d971dd46",
+      "storeFile": "72926f40ef7c92f27ed246dd80fd8ebd121b24c8.json",
+      "chunks": 1
+    },
+    "src/routes/scriptAgent/setPlanData.ts": {
+      "hash": "0afa995daace53c22917afb988c86c5fd5f8dc55",
+      "storeFile": "fc088c964515ae6c50a215bfdca296dd38c53746.json",
+      "chunks": 1
+    },
+    "src/routes/scriptAgent/updateData.ts": {
+      "hash": "5ffbbbf4145e0c9b150b90b894b7762e958a8d83",
+      "storeFile": "08f690b331a5a0ce5f2c838e363b640e84c6e5eb.json",
+      "chunks": 1
+    },
+    "src/routes/setting/about/checkUpdate.ts": {
+      "hash": "01f984bc5fb604fe621e203a66662abc22240328",
+      "storeFile": "7b5e53535cde0af0ef84d15882a9117175ea25b0.json",
+      "chunks": 1
+    },
+    "src/routes/setting/about/downloadApp.ts": {
+      "hash": "2ea30c9e4dbb1b3680f27701b6384aba5393f7ac",
+      "storeFile": "0773dabf93e9256f0e7c758d9d0ffedb9a0e7f1b.json",
+      "chunks": 1
+    },
+    "src/routes/setting/agentDeploy/agentSetKey.ts": {
+      "hash": "27a93395da6fbc2fff52393a0d2d6a5d342d15d9",
+      "storeFile": "da67cbd594de2dafb861f1f702f40a86db0155f1.json",
+      "chunks": 1
+    },
+    "src/routes/setting/agentDeploy/deployAgentModel.ts": {
+      "hash": "277246352f10631f13cdb679e7e58b5b0cc21ace",
+      "storeFile": "d6bae2ff815a61b98260ad50335a0323eebed910.json",
+      "chunks": 1
+    },
+    "src/routes/setting/agentDeploy/getAgentDeploy.ts": {
+      "hash": "705b1bfe07544af9c3ff6a3adf21c79ebcaf8791",
+      "storeFile": "10390379a64bf9739d27135eb10bd40caf447bbd.json",
+      "chunks": 1
+    },
+    "src/routes/setting/agentDeploy/getAgentUseMode.ts": {
+      "hash": "99d19e223cfdbb2d970ce5a88d0b9652f317a34d",
+      "storeFile": "388a300c608d86de0a2b5153148200b72cf78d74.json",
+      "chunks": 1
+    },
+    "src/routes/setting/agentDeploy/updateAgentModel.ts": {
+      "hash": "f158b3f34782395b20c37d33cd525892a81cc56f",
+      "storeFile": "e22d02104513e6e26c572b3cf7b3042142a45a2d.json",
+      "chunks": 1
+    },
+    "src/routes/setting/agentDeploy/updateUseMode.ts": {
+      "hash": "66e35e19cb5673830363f395a72ab5c2fca17f41",
+      "storeFile": "199fe948ce4c277a32b504b9036ededc5326474c.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dbConfig/clearData.ts": {
+      "hash": "ce08d925e00ba37e3ca7e22889add2c266302a42",
+      "storeFile": "7ed58dcf86f5a39cfd7f5717d85938348be99909.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dbConfig/clearTable.ts": {
+      "hash": "9203ced9830b27a30f64394634a2ab41f38ba5d6",
+      "storeFile": "81480e3703fe121dd426ef74c5abb5f882742ef9.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dbConfig/dbInfo.ts": {
+      "hash": "c09c9e93fd97a326d05252ceb995ba38ef0c617b",
+      "storeFile": "0d384dee0e4f7f0dbaff421e4d1d919b7b0167fb.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dbConfig/exportData.ts": {
+      "hash": "5dc46adf2e431f197a6e3a0b1a420091ef38475a",
+      "storeFile": "1736dbf55e18bada77d9854f8b8bb5411e8af2f9.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dbConfig/importData.ts": {
+      "hash": "814fbdc1eb0691457d4e30ed8843b58b0c5071f7",
+      "storeFile": "cce563c832b31d49bf2a52a3bcdcc4c0b9436591.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dev/getSwitchAiDevTool.ts": {
+      "hash": "49b98f03789d7b33309131924fc6c24e575a993d",
+      "storeFile": "1e4c6b26467c8c37a43362426b6453b78ea34bba.json",
+      "chunks": 1
+    },
+    "src/routes/setting/dev/updateSwitchAiDevTool.ts": {
+      "hash": "2c106d9f714cefd4b9190fe9934e176a1acc9e17",
+      "storeFile": "58b714296c2586d259ed9808dbed7be1bb716f78.json",
+      "chunks": 1
+    },
+    "src/routes/setting/fileManagement/openFolder.ts": {
+      "hash": "697c73b9bad7c810c01db69c2276efe7494fec24",
+      "storeFile": "8c3e4e5b33a16181dbdc4bb1e91176f89f5dd5e3.json",
+      "chunks": 1
+    },
+    "src/routes/setting/getTextModel.ts": {
+      "hash": "9e43a351ab3356314bfeb2e9356a4f5f9d6a2ab8",
+      "storeFile": "664b9794d667184fd61637f719a9d343e5335e03.json",
+      "chunks": 1
+    },
+    "src/routes/setting/loginConfig/getUser.ts": {
+      "hash": "725e6b4c54c27a860adf179079749677c05b299f",
+      "storeFile": "a1ba5e960b803169377f125751829671e11f1cf2.json",
+      "chunks": 1
+    },
+    "src/routes/setting/loginConfig/updateUserPwd.ts": {
+      "hash": "070eccfe63e095db074fdfb373e8aa9165aa44b3",
+      "storeFile": "63876f59cf9680bdc62615aa36ff5a5c49ad6c8b.json",
+      "chunks": 1
+    },
+    "src/routes/setting/memoryConfig/delAllMemory.ts": {
+      "hash": "65f023c95280ab80a6f896228285c8280bc4f79b",
+      "storeFile": "317f3cb59e1467244d0e092ce7f07455d92e9c38.json",
+      "chunks": 1
+    },
+    "src/routes/setting/memoryConfig/getMemory.ts": {
+      "hash": "8355066453954019930d71e07f6d4df0a9890094",
+      "storeFile": "f4c8e5ae423b4cd61f6949654f1ec4cc69d8e789.json",
+      "chunks": 1
+    },
+    "src/routes/setting/memoryConfig/sureMemory.ts": {
+      "hash": "30777e53349991918393cacc899bd81ce1336956",
+      "storeFile": "3dbb64a999141f44592490b9ea9f23b2e3402fd7.json",
+      "chunks": 1
+    },
+    "src/routes/setting/modelMap/bindingPrompt.ts": {
+      "hash": "908bc0aa0e8a2e2f65a8cfc6122bee926c897268",
+      "storeFile": "a2107e7b36d9faf8da8fe7f98bcf176d30a9cee7.json",
+      "chunks": 1
+    },
+    "src/routes/setting/modelMap/deletePrompt.ts": {
+      "hash": "2013893da0673d91c283060d420b785417dc5f59",
+      "storeFile": "698a668549fb47b1dd1f2c2271b97c363dc31cd5.json",
+      "chunks": 1
+    },
+    "src/routes/setting/modelMap/getImageAndVideoModel.ts": {
+      "hash": "cc3aa1c089634b2da39fb89e23a317bf9ba3a41d",
+      "storeFile": "bf9fbe4859d31c4379ce7292e0e331f5b33381d9.json",
+      "chunks": 1
+    },
+    "src/routes/setting/modelMap/getPromptList.ts": {
+      "hash": "fce33f915b1ed94d53e714487e5153501e9740b4",
+      "storeFile": "d897389b22291518b131f0033041d7605a760d08.json",
+      "chunks": 1
+    },
+    "src/routes/setting/modelMap/savePrompt.ts": {
+      "hash": "18f37379ab7b31dd6c4314c510c9d73a52423c2d",
+      "storeFile": "a252754140f0c28cf6188cd0b0836f26aebc8dce.json",
+      "chunks": 1
+    },
+    "src/routes/setting/modelMap/updatePrompt.ts": {
+      "hash": "168242e5574b7cf0df0a758fbcf445be5b8a7014",
+      "storeFile": "074a10e77b932c44ae44e44a33da9281fe2675c0.json",
+      "chunks": 1
+    },
+    "src/routes/setting/promptManage/getPrompt.ts": {
+      "hash": "87f3a8b28af9f2f0df69f68e18fde72a7971bf68",
+      "storeFile": "fa8da60690e7ab1671dc3a2ed470c03e6345396f.json",
+      "chunks": 1
+    },
+    "src/routes/setting/promptManage/updatePrompt.ts": {
+      "hash": "040492b1aea00753553d190398b2821f29bc2026",
+      "storeFile": "cf7a6e6987313c38e65b6a689b6c21277418a1ce.json",
+      "chunks": 1
+    },
+    "src/routes/setting/skillManagement/getSkillContent.ts": {
+      "hash": "00e1be7297b789b4ab169727c95fdb907beccd93",
+      "storeFile": "f3fc4e0582d8fcab089841f04786271c155d1850.json",
+      "chunks": 1
+    },
+    "src/routes/setting/skillManagement/getSkillList.ts": {
+      "hash": "66c3b206981d701a05cb92f68a54a40e1bd8e671",
+      "storeFile": "0271028becc661cf51e2c96febb43060265904e1.json",
+      "chunks": 1
+    },
+    "src/routes/setting/skillManagement/saveSkillContent.ts": {
+      "hash": "1b3ad04e5fde5b01780605aab62bc53475b04c09",
+      "storeFile": "b971371172793240e012d30a3598bdc3b736e550.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/addVendor.ts": {
+      "hash": "27c213047e9099c0f5dabd66d972b3a128c016f8",
+      "storeFile": "39921f90ad0b61262ce7ec7013e0cff67d5807a4.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/addVendorModel.ts": {
+      "hash": "4ddd46789dbe5f084588fe5905fd4ac5f1885808",
+      "storeFile": "b227ccfa5e97dabe1d16b617773134f365ba6906.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/delVendorModel.ts": {
+      "hash": "7e4f14653e9a65e717e92690833576fe6181be8d",
+      "storeFile": "f14d4f26fa8c410eccca5a2ed9d7c6d61c1413f8.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/deleteVendor.ts": {
+      "hash": "dbc3490fce5ac477f55d62262d3a8acb47fae86e",
+      "storeFile": "75d41ccb4167a36698677015e465c59298e57c28.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/enableVendor.ts": {
+      "hash": "adb2da91ef8121388d70451b8e3f1805d1fb37e2",
+      "storeFile": "2f02a6b63772062dd87c8a83ee51585d25afdfdf.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/getCodeByLink.ts": {
+      "hash": "c013d85bb10107c6b7ceaae9c74bf2ac79348dfe",
+      "storeFile": "c4324a7294fc010626f4124408330ca3ed89d7a7.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/getVendorList.ts": {
+      "hash": "92508c6be1ba767e4109d711363973d3a9b26092",
+      "storeFile": "1be9d83833221a6a76c7627c0b175b6018780fb8.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/modelTest.ts": {
+      "hash": "152d2c60846854b7f042f9e79242a4d3bfcb32be",
+      "storeFile": "3d9a95205ad51c5051abfb18bb486ca9874ef991.json",
+      "chunks": 2
+    },
+    "src/routes/setting/vendorConfig/modelTest/imageTest.ts": {
+      "hash": "3abacd48ecdd9352005d3782c8c947ae30da448e",
+      "storeFile": "8afcf5a0b300916d75563a7d233417c3918fcd5a.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/modelTest/textTest.ts": {
+      "hash": "d55a001b93845606fee5fcff803a0db01bfbc8e6",
+      "storeFile": "2967e462de6f3c03e77cbcb79aab39e6629f19d9.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/modelTest/videoTest.ts": {
+      "hash": "940d2eb6d51afa1473c729470e8bf98154287e56",
+      "storeFile": "a9ca57380570d16d93c13bd66d62fc4585939698.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/upVendorModel.ts": {
+      "hash": "f7690f8115ffaca1883113657d8fa2b0aa23c5f4",
+      "storeFile": "374c6ff927e24ff7efe1098a59ed7ab3c49d5d73.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/updateCode.ts": {
+      "hash": "b3a512ba2ac42709758aea2b1bac61a9b7353aa5",
+      "storeFile": "cab79c1ace82bd0442678c53a5b81c5941eab147.json",
+      "chunks": 1
+    },
+    "src/routes/setting/vendorConfig/updateVendorInputs.ts": {
+      "hash": "5b7c2f12a89e3aa70329c6ec0a6c028915262938",
+      "storeFile": "7ea3412152e9483e846ffa2ed8f75325ad7be734.json",
+      "chunks": 1
+    },
+    "src/routes/task/getProject.ts": {
+      "hash": "784f0a28f239afbe36010b82264410c80d42d5df",
+      "storeFile": "0fa1a064a1cf6fe2a293fd4e3537cbec303b0d71.json",
+      "chunks": 1
+    },
+    "src/routes/task/getTaskApi.ts": {
+      "hash": "a91b745d76f4b237156bef9ea37de0f7dda37c2c",
+      "storeFile": "cae08c8484ec4070226151e452bd5a37ad3cd015.json",
+      "chunks": 1
+    },
+    "src/routes/task/getTaskCategories.ts": {
+      "hash": "9669b6202837b2f31a936b4e28a71dec7554a52b",
+      "storeFile": "23006b4d2c7e521a667a716b671fa6e679d4fc8f.json",
+      "chunks": 1
+    },
+    "src/routes/task/taskDetails.ts": {
+      "hash": "1b700075cf6818a877a44d5995c51832a2b8668d",
+      "storeFile": "95deb2ba037b9ab1571e267be005d0ecbbc07b06.json",
+      "chunks": 1
+    },
+    "src/routes/test/test.ts": {
+      "hash": "108087616b12edbbeda45a60d1ccc5bde629a3f8",
+      "storeFile": "d4ab3d4f25cddaf6c56f68b258e402a75e3510b8.json",
+      "chunks": 1
+    },
+    "src/socket/chatMessagesData.d.ts": {
+      "hash": "4e88ae5f200e08fd19a186b22c991784a488089e",
+      "storeFile": "4164ed0e2582e7a958b2d4225cb139582b01f9d3.json",
+      "chunks": 1
+    },
+    "src/socket/index.ts": {
+      "hash": "26a99cc4e1e087f79f3e0c8a06aab0345d59b41b",
+      "storeFile": "07670509f01203d791d726c098d95a0834b7730b.json",
+      "chunks": 1
+    },
+    "src/socket/resTool copy.ts": {
+      "hash": "ef01855a3ad6b355cb053a196a05e80e9145727a",
+      "storeFile": "1c56bbf0eae4658683ab7d69ad5c4d9c0171429c.json",
+      "chunks": 4
+    },
+    "src/socket/resTool.ts": {
+      "hash": "e8e45bc5d4eb3df03a1f06f876d951b5dd6299bf",
+      "storeFile": "efec7b02f3441e91b2a2931440a596bf207ab46d.json",
+      "chunks": 5
+    },
+    "src/socket/routes/productionAgent.ts": {
+      "hash": "f7bff16a3ba9fa30742cae4a738ece74436f81d9",
+      "storeFile": "079fdf08f5e94fd9e800793373e12f54fcc351c5.json",
+      "chunks": 1
+    },
+    "src/socket/routes/scriptAgent.ts": {
+      "hash": "764f921f146530a49d0b4dc6b5f9e48ff0c2be93",
+      "storeFile": "8321fbad25679c5e2c985faa415b2d82e0bc64a9.json",
+      "chunks": 1
+    },
+    "src/utils.ts": {
+      "hash": "a37b0bdc38f035bd79df077087e25d774b1172db",
+      "storeFile": "d49e08f18c892b96c4d1034b9bcf7fb205670d6f.json",
+      "chunks": 1
+    },
+    "src/utils/agent/embedding.ts": {
+      "hash": "6b2bebf694a1ce81aed73be5bcac207dc2179fee",
+      "storeFile": "1c87cf81a753b0f8bf19cfc5123ea14797f91332.json",
+      "chunks": 1
+    },
+    "src/utils/agent/memory.ts": {
+      "hash": "cdc4ed7bbeaeb85d2dfd1adec0a65a36a2f29aae",
+      "storeFile": "61a3f736a1968207031d1459609624d14401ccf0.json",
+      "chunks": 3
+    },
+    "src/utils/agent/skillsTools.ts": {
+      "hash": "6900439bdc97b27ed6ae128cccde1e8340e97514",
+      "storeFile": "be7443813f214c64872b084b2b9647fc7d4c056c.json",
+      "chunks": 4
+    },
+    "src/utils/ai.ts": {
+      "hash": "6a38283755a82648113ee90b340da927eb733af7",
+      "storeFile": "4fb6474d25f45f82b36c322f6729ecdf219890e2.json",
+      "chunks": 4
+    },
+    "src/utils/cleanNovel.ts": {
+      "hash": "76f9fb68b3a23ed0ed797e1821152766153dac9e",
+      "storeFile": "cae253c8fba7d127fa53a75df8baaf142d9773ea.json",
+      "chunks": 1
+    },
+    "src/utils/db.ts": {
+      "hash": "413a8f08a2951bc2fbe6b8d491943f9924f45999",
+      "storeFile": "432342e305bb00ce8f9099c7593dc6e223c0a31f.json",
+      "chunks": 1
+    },
+    "src/utils/error.ts": {
+      "hash": "50fd7d98b557f22b9131666585027e631c2422a2",
+      "storeFile": "fcf05b7beffddc5662cc07505ed335bb8a0b6ff7.json",
+      "chunks": 1
+    },
+    "src/utils/getArtPrompt.ts": {
+      "hash": "903888f48dbe5c8721e9be49759241c6455cb5e3",
+      "storeFile": "0ea0895afcb66351bbeff83ef58791619c21757e.json",
+      "chunks": 1
+    },
+    "src/utils/getConfig.ts": {
+      "hash": "2033123d18d03a262ef044c3ce3cae6b382146bd",
+      "storeFile": "7bd6e2d63a6aa03eccdfcbf5998b0cb7123e453f.json",
+      "chunks": 1
+    },
+    "src/utils/getPath.ts": {
+      "hash": "491a99e42e3974c6252a69e1bf6bebf647be59a7",
+      "storeFile": "feeddc62579dbc607f0f995d7dab33744cb79335.json",
+      "chunks": 1
+    },
+    "src/utils/getPrompts.ts": {
+      "hash": "2076f7532d1a35a4fdaf7f68908d8b2167ab7c5b",
+      "storeFile": "555e0391935fcb7345d339949c43e981c2215730.json",
+      "chunks": 3
+    },
+    "src/utils/image.ts": {
+      "hash": "bac5634b96d6637b84cb4914a10f324532002051",
+      "storeFile": "4ee1535914b8daf16d7152e2722a1859aa262706.json",
+      "chunks": 2
+    },
+    "src/utils/oss.ts": {
+      "hash": "edeeef26338ffc1e23b26431d2fbb7b057dad93d",
+      "storeFile": "2de6b5bed505072566a2058aeefebf7ea79eec79.json",
+      "chunks": 4
+    },
+    "src/utils/replaceUrl.ts": {
+      "hash": "af7cb217810561f9c5115a311d7194a9b7b4fa0a",
+      "storeFile": "c6607af52c3b28dcee0b9d07390e865b32279f8a.json",
+      "chunks": 1
+    },
+    "src/utils/stripThink.ts": {
+      "hash": "8129a5fa54d991362f803abdaf0a4ff24f2b89db",
+      "storeFile": "4eca6008d2ddee7a078b11940bad5b7054d3504b.json",
+      "chunks": 2
+    },
+    "src/utils/taskRecord.ts": {
+      "hash": "7cd9873d9e261ce1cbeff6764562e1eb566ca560",
+      "storeFile": "291c5076346853158a1fb45788fe976590fb9c7e.json",
+      "chunks": 1
+    },
+    "src/utils/vendor.ts": {
+      "hash": "8aaaadb37dd5b9ef4601669f282df01c9e0c1eed",
+      "storeFile": "fb63e07a8d806a11ebacdefa26397bce13b34319.json",
+      "chunks": 1
+    },
+    "src/utils/vm.ts": {
+      "hash": "63428d44a3eb7aa482127605839d8c330ffb9dca",
+      "storeFile": "26b948734c5e1a8b4f37edbf9e9908c3b1296444.json",
+      "chunks": 2
+    },
+    "src/utils/writeVersion.ts": {
+      "hash": "cc97a70ffd0d35f354782e0d4e1eb63e9ed95ea4",
+      "storeFile": "ec80269039f1b1f9b20a11f63ec7e08efa0f8cad.json",
+      "chunks": 1
+    }
+  }
+}
