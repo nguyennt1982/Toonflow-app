@@ -1,7 +1,7 @@
 ---
 name: toonflow-knowledge-index
 description: "Use when the user asks ANYTHING about the Toonflow project (code, routes, sockets, agents, schema, storyboard, image/video gen) or its repo container: delegate the task to opencode run in /root/git-research, restore/maintain the knowledge base, and back it up before teardown."
-version: 1.4.1
+version: 1.5.1
 author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -9,6 +9,11 @@ metadata:
   hermes:
     tags: [toonflow, knowledge-base, rag, embeddings, code-index, container-lifecycle]
     related_skills: [opencode, hermes-agent-skill-authoring]
+    blueprint:
+      schedule: "every 30m"
+      deliver: local
+      prompt: "Run the Toonflow Index Refresh protocol: first check /root/git-research exists; if it does not, output nothing and stop. In /root/git-research run yarn index:check. If it prints FRESH, output nothing and stop. If it prints STALE or NO_INDEX, delegate the regeneration to opencode run (run: yarn index:generate, yarn index:embed, yarn docs:routes; run yarn docs:data-model only if data/db2.sqlite exists; then yarn index:check; finally git add -A && git commit -m 'regenerate knowledge docs' && git push origin master), relay the FRESH confirmation, then run yarn kb:backup. Output a short one-line summary only when something changed."
+      no_agent: false
 ---
 
 # Toonflow Knowledge Index
@@ -110,6 +115,7 @@ yarn kb:restore              # fetch kb-index → restore stores → rebuild der
 yarn index:check             # must print FRESH
 yarn index:search "socket auth middleware"   # sanity: returns ranked file:line hits
 ```
+Then register the recurring monitor (Scheduled Monitoring section): `cronjob(action="create", name="Toonflow Index Monitor", ...)`.
 
 **Done when:** `index:check` prints `FRESH` and `index:search` returns plausible top hits.
 
@@ -124,7 +130,7 @@ Your job is to **keep the knowledge base fresh** and make opencode do the heavy 
 2. If it prints `FRESH` → tell the user the index is up to date and stop.
 3. If it prints `STALE` or `NO_INDEX` → delegate the regeneration to opencode (embeddings can take minutes, so use a large timeout):
    ```
-   terminal(command="opencode run 'Sources changed. Regenerate the knowledge base: run yarn index:generate, yarn index:embed, yarn docs:routes, yarn docs:data-model, then yarn index:check and report whether it prints FRESH. Do not skip any step.'", workdir="/root/git-research", timeout=900)
+   terminal(command="opencode run 'Sources changed. Regenerate the knowledge base: run yarn index:generate, yarn index:embed, yarn docs:routes; run yarn docs:data-model only if data/db2.sqlite exists; then yarn index:check; then git add -A && git commit -m \"regenerate knowledge docs\" && git push origin master. Do not skip any step.'", workdir="/root/git-research", timeout=900)
    ```
 4. Relay opencode's FRESH confirmation to the user. Then, if embeddings changed, snapshot them:
    ```
@@ -133,7 +139,27 @@ Your job is to **keep the knowledge base fresh** and make opencode do the heavy 
    (`kb:backup` is orchestration — safe for you to run; it force-pushes the embedding stores to `origin/kb-index`.)
 5. Confirm the code + index changes are committed/pushed on the fork `origin` master (opencode does the commits; you check `git status`/`git log` if unsure).
 
-**Done when:** `index:check` prints `FRESH`, `kb:backup` pushed the snapshot, and the fork is up to date.
+**Done when:** `index:check` prints `FRESH`, regenerated `docs/business/*.md` are committed + pushed on the fork `origin` master, and `kb:backup` pushed the snapshot.
+
+## Scheduled Monitoring (cron)
+
+Keep the knowledge base fresh without the user asking. Hermes owns a recurring cron job (its scheduler lives on the persistent host, so it survives container teardown):
+
+**Register on container creation** (Fresh Container section):
+```
+cronjob(action="create", name="Toonflow Index Monitor",
+        skills=["toonflow-knowledge-index"],
+        prompt="Run the Index Refresh protocol: if /root/git-research does not exist, output nothing and stop. Run yarn index:check; if FRESH, output nothing and stop. If STALE or NO_INDEX, delegate regeneration to opencode run (yarn index:generate && yarn index:embed && yarn docs:routes; yarn docs:data-model only if data/db2.sqlite exists; then yarn index:check; then git add -A && git commit -m 'regenerate knowledge docs' && git push origin master), then yarn kb:backup. Output a short one-line summary only when something changed.",
+        schedule="every 30m", workdir="/root/git-research", deliver="local")
+```
+
+Rules:
+- **Silent when nothing to do** — FRESH index, or container/repo unavailable → output nothing (no spam).
+- The cron agent has **no chat memory** — the prompt is fully self-contained and leans on this skill's Index Refresh section.
+- **Only the FRESH check + `kb:backup` may be done by Hermes itself here; regeneration still goes through `opencode run`.**
+- If the job already exists (e.g. `cronjob(action="list")` shows `Toonflow Index Monitor`), do not duplicate it — `update` or skip.
+
+**Remove on teardown** (Before Teardown section): `cronjob(action="remove", name="Toonflow Index Monitor")` — otherwise a dead-container job keeps failing in the background.
 
 ## Ongoing Session (Maintenance)
 
@@ -163,6 +189,7 @@ If the container has re-embedded after the last snapshot (or if any knowledge wo
 git add -A && git commit -m "..."      # push all work to origin master
 yarn kb:backup                          # ensure fresh embed + push stores to origin kb-index
 ```
+Then remove the recurring monitor (Scheduled Monitoring section): `cronjob(action="remove", name="Toonflow Index Monitor")`.
 
 **Done when:** `git status` clean, `yarn kb:backup` prints `pushed <sha> -> origin kb-index`, and `git ls-remote origin kb-index` shows the new sha.
 
