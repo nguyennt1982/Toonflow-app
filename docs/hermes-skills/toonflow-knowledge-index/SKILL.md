@@ -1,7 +1,7 @@
 ---
 name: toonflow-knowledge-index
-description: "Use when working in the Toonflow repo container: restore, maintain, and query the agent knowledge base (code index, semantic search, business docs), and back it up before container teardown."
-version: 1.0.0
+description: "Use when the user asks ANYTHING about the Toonflow project (code, routes, sockets, agents, schema, storyboard, image/video gen) or its repo container: delegate the task to opencode run in /root/git-research, restore/maintain the knowledge base, and back it up before teardown."
+version: 1.1.0
 author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
