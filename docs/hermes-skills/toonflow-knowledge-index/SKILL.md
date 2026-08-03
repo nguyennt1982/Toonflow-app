@@ -1,7 +1,7 @@
 ---
 name: toonflow-knowledge-index
 description: "Use when the user asks ANYTHING about the Toonflow project (code, routes, sockets, agents, schema, storyboard, image/video gen) or its repo container: delegate the task to opencode run in /root/git-research, restore/maintain the knowledge base, and back it up before teardown."
-version: 1.3.1
+version: 1.3.2
 author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -77,9 +77,11 @@ Before ANY Toonflow work, in this exact order — this is what makes the system 
 
 **If you catch yourself reading/searching the Toonflow repo yourself — STOP. You are violating this protocol. Run `opencode run` instead and relay its output.**
 
-**If `opencode run` fails:**
-- `exit 127` → binary missing; run `npm install -g opencode-ai` in the container and retry.
-- `exit 124` (timeout) → your terminal tool killed it at 120s; retry with a shorter/conciser prompt or a larger explicit `timeout`, and relay the partial output if it answered anything.
+**If `opencode run` fails (non-zero exit):** Do NOT fall back to doing the task yourself. Do NOT read/search the repo to compensate. Report the error to the user and stop:
+- `exit 127` → binary missing; tell the user the container needs `npm install -g opencode-ai`, then stop.
+- `exit 124` (timeout) → your terminal tool killed it at 120s; tell the user it timed out. One retry via opencode with a shorter/conciser prompt is allowed — never with your own tools.
+- Any other error → tell the user the exit code/error verbatim and stop.
+Relay whatever partial output opencode produced together with the error message, then make zero further tool calls.
 
 **Done when:** the user's question is answered from opencode's output, or the requested code change is committed/pushed by opencode. The tools executed for the task belong to opencode, not to you.
 
