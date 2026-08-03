@@ -1,0 +1,110 @@
+---
+name: toonflow-knowledge-index
+description: "Use when working in the Toonflow repo container: restore, maintain, and query the agent knowledge base (code index, semantic search, business docs), and back it up before container teardown."
+version: 1.0.0
+author: Hermes Agent
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: [toonflow, knowledge-base, rag, embeddings, code-index, container-lifecycle]
+    related_skills: [opencode, hermes-agent-skill-authoring]
+---
+
+# Toonflow Knowledge Index
+
+## Overview
+
+The Toonflow repo (checked out as `git-research`) carries a 4-layer agent knowledge base so an agent can answer code/domain questions without re-reading the whole tree:
+
+1. `AGENTS.md` (root + `src/agents|routes|socket|utils/`) — layered protocols.
+2. Symbol index — `.opencode/index/code-index.{json,txt}` + `index.meta.json`.
+3. Business docs — `docs/business/01-data-model.md`, `02-routes-map.md`, `03-agent-orchestration.md`.
+4. Semantic embeddings — `.opencode/index/embeddings.json` (384-dim, local ONNX model), built incrementally from per-file stores in `.opencode/index/embeddings/`.
+
+The container is **ephemeral** (Hermes-created sandbox): anything not pushed to git dies with it. A full embedding rebuild takes ~10 min, so the per-file stores are snapshotted to the fork's `kb-index` branch and restored in seconds. `origin` = **`nguyennt1982/Toonflow-app`** (the fork); the upstream `HBAI-Ltd/Toonflow-app` is **never** pushed to.
+
+## When to Use
+
+- Hermes spawns a fresh Toonflow container, or the user asks for anything Toonflow-related (code, routes, schema, agent behavior, storyboard/image/video generation).
+- The user modifies Toonflow source and the knowledge base needs re-syncing.
+- A Toonflow container is about to be torn down and its knowledge base must survive.
+
+## Key Facts
+
+| Fact | Value |
+|---|---|
+| `origin` | `https://github.com/nguyennt1982/Toonflow-app.git` (fork) |
+| Embedding model | `data/models/all-MiniLM-L6-v2` (tracked in git; clone gets it) |
+| Index dir | `.opencode/index/` — gitignored, regenerable; never commit to master |
+| Backup branch | `kb-index` — orphan branch holding only embedding stores + manifest |
+| Full embed | `yarn index:embed` (incremental, ~15s) vs ~10 min full rebuild |
+| Derived files | `embeddings.json`, `code-index.*` rebuild from stores in seconds — never stored on `kb-index` |
+| Query language | Model is English-only; run embedding queries in English/keywords, Vietnamese only for chat |
+
+## Fresh Container (Recovery)
+
+Run when a new container is created or after a teardown:
+
+```
+git clone https://github.com/nguyennt1982/Toonflow-app.git
+cd Toonflow-app
+yarn install                 # tsx, @huggingface/transformers, onnxruntime-web, etc.
+yarn kb:restore              # fetch kb-index → restore stores → rebuild derived indexes
+yarn index:check             # must print FRESH
+yarn index:search "socket auth middleware"   # sanity: returns ranked file:line hits
+```
+
+**Done when:** `index:check` prints `FRESH` and `index:search` returns plausible top hits.
+
+## Ongoing Session (Maintenance)
+
+1. If `.opencode/index/` exists, run `yarn index:check` (fast). If it prints `STALE` or `NO_INDEX`, run `yarn index:generate` (~15s) once before answering code questions.
+2. After editing source (routes, agents, skills, schema):
+   - `yarn index:generate` — reindex symbols.
+   - `yarn index:embed` — re-embed only changed files (incremental).
+   - If routes/agents/schema changed: `yarn docs:routes && yarn docs:data-model` to keep `docs/business/` in sync.
+   - Commit + push to the fork (`origin`, master).
+3. Never edit generated files: `src/router.ts`, `src/types/database.d.ts` — they regenerate from source.
+
+**Done when:** `index:check` is `FRESH` and no stale docs/scripts remain uncommitted.
+
+## Retrieval
+
+| Question type | Command | Why |
+|---|---|---|
+| Exact symbol ("where is X defined/used") | `grep code-index.txt` or query `code-index.json` | fast, precise |
+| Concept/fuzzy ("which code handles X") | `yarn index:search "natural language query" [--top N]` | semantic ranking |
+| Domain ("how does the production agent work") | Read `docs/business/03-agent-orchestration.md` first | curated answer |
+| DB schema / endpoints | `docs/business/01-data-model.md`, `02-routes-map.md` | generated, always regenerable |
+
+Open the top `file:line` hits for full context before answering.
+
+## Before Teardown
+
+If the container has re-embedded after the last snapshot (or if any knowledge work is uncommitted):
+
+```
+git add -A && git commit -m "..."      # push all work to origin master
+yarn kb:backup                          # ensure fresh embed + push stores to origin kb-index
+```
+
+**Done when:** `git status` clean, `yarn kb:backup` prints `pushed <sha> -> origin kb-index`, and `git ls-remote origin kb-index` shows the new sha.
+
+## Common Pitfalls
+
+1. **Pushing to upstream `HBAI-Ltd/Toonflow-app`.** It's someone else's repo. `origin` is the fork; double-check `git remote -v`.
+2. **Committing `.opencode/index/` to master.** It's gitignored by design; the expensive part lives on `kb-index`, the rest regenerates in seconds.
+3. **Expecting `kb-index` merged into master.** It's an orphan backup branch — fetch/restore only, never merge.
+4. **Running a ~10 min full embed** when incremental suffices. `index:embed` re-embeds only changed files (hash-based); only a model/chunker/format change forces a full rebuild.
+5. **Backing up after re-embedding without a new `kb:backup`.** The snapshot only reflects the last backup; always re-run `kb:backup` after embedding new content.
+6. **Embedding queries in Vietnamese/Chinese.** The model is English-centric; translate queries to English/keywords first.
+7. **Forgetting `yarn install` in a fresh container.** Scripts use `tsx` and `@huggingface/transformers`; clone alone is not enough.
+
+## Verification Checklist
+
+- [ ] `git remote -v` shows only the fork (`nguyennt1982/Toonflow-app`)
+- [ ] `yarn index:check` prints `FRESH`
+- [ ] `yarn index:search "<english query>"` returns ranked `file:line` hits
+- [ ] After source edits: index + docs regenerated, committed, pushed
+- [ ] Before teardown: `git status` clean and `yarn kb:backup` pushed
