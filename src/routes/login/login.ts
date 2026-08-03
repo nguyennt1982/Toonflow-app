@@ -6,6 +6,8 @@ import { validateFields } from "@/middleware/middleware";
 import { z } from "zod";
 const router = express.Router();
 
+// cron-test: force index STALE to exercise the Toonflow Index Monitor refresh loop
+
 export function setToken(payload: string | object, expiresIn: string | number, secret: string): string {
   if (!payload || typeof secret !== "string" || !secret) {
     throw new Error("参数不合法");
