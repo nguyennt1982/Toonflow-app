@@ -1,7 +1,7 @@
 ---
 name: toonflow-knowledge-index
 description: "Use when the user asks ANYTHING about the Toonflow project (code, routes, sockets, agents, schema, storyboard, image/video gen) or its repo container: delegate the task to opencode run in /root/git-research, restore/maintain the knowledge base, and back it up before teardown."
-version: 1.3.5
+version: 1.4.0
 author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -107,17 +107,36 @@ yarn index:search "socket auth middleware"   # sanity: returns ranked file:line 
 
 **Done when:** `index:check` prints `FRESH` and `index:search` returns plausible top hits.
 
+## Index Refresh (Hermes = coordinator, opencode = worker)
+
+Your job is to **keep the knowledge base fresh** and make opencode do the heavy lifting. You only run light checks yourself; never run `index:generate`/`index:embed` yourself (minutes of embedding — delegate it).
+
+1. **After every delegated task** (or when asked to "refresh/update the index"), verify freshness — this light check is yours to run:
+   ```
+   terminal(command="yarn index:check", workdir="/root/git-research")
+   ```
+2. If it prints `FRESH` → tell the user the index is up to date and stop.
+3. If it prints `STALE` or `NO_INDEX` → delegate the regeneration to opencode (embeddings can take minutes, so use a large timeout):
+   ```
+   terminal(command="opencode run 'Sources changed. Regenerate the knowledge base: run yarn index:generate, yarn index:embed, yarn docs:routes, yarn docs:data-model, then yarn index:check and report whether it prints FRESH. Do not skip any step.'", workdir="/root/git-research", timeout=900)
+   ```
+4. Relay opencode's FRESH confirmation to the user. Then, if embeddings changed, snapshot them:
+   ```
+   terminal(command="yarn kb:backup", workdir="/root/git-research")
+   ```
+   (`kb:backup` is orchestration — safe for you to run; it force-pushes the embedding stores to `origin/kb-index`.)
+5. Confirm the code + index changes are committed/pushed on the fork `origin` master (opencode does the commits; you check `git status`/`git log` if unsure).
+
+**Done when:** `index:check` prints `FRESH`, `kb:backup` pushed the snapshot, and the fork is up to date.
+
 ## Ongoing Session (Maintenance)
 
-1. If `.opencode/index/` exists, run `yarn index:check` (fast). If it prints `STALE` or `NO_INDEX`, run `yarn index:generate` (~15s) once before answering code questions.
-2. After editing source (routes, agents, skills, schema):
-   - `yarn index:generate` — reindex symbols.
-   - `yarn index:embed` — re-embed only changed files (incremental).
-   - If routes/agents/schema changed: `yarn docs:routes && yarn docs:data-model` to keep `docs/business/` in sync.
-   - Commit + push to the fork (`origin`, master).
+1. Before a long session, run `yarn index:check` (fast, yours). If it prints `STALE` or `NO_INDEX`, delegate the regeneration via the Index Refresh section above — do NOT run `yarn index:generate`/`yarn index:embed` yourself.
+2. If a delegated task touched routes/agents/skills/schema, the Index Refresh step already re-runs `docs:routes`/`docs:data-model` via opencode.
 3. Never edit generated files: `src/router.ts`, `src/types/database.d.ts` — they regenerate from source.
+4. Before container teardown, run `yarn kb:backup` so no embeddings are lost (container is ephemeral).
 
-**Done when:** `index:check` is `FRESH` and no stale docs/scripts remain uncommitted.
+**Done when:** `index:check` is `FRESH` and `origin/kb-index` matches the latest embeddings.
 
 ## Retrieval
 
