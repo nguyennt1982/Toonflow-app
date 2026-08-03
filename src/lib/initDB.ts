@@ -80,30 +80,36 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
       initData: async (knex) => {
         await knex("o_agentDeploy").insert([
           {
-            model: "",
-            modelName: "",
-            vendorId: null,
+            model: "Qwen3.6-35B-A3B-Q4_K_M",
+            modelName: "localhost-llm:Qwen3.6-35B-A3B-Q4_K_M",
+            vendorId: "localhost-llm",
             key: "scriptAgent",
             name: "剧本Agent",
             desc: "用于读取原文生成故事骨架、改编策略，建议使用具备强大文本理解和生成能力的模型",
+            temperature: 0.7,
+            maxOutputTokens: 4096,
             disabled: false,
           },
           {
-            model: "",
-            modelName: "",
-            vendorId: null,
+            model: "Qwen3.6-35B-A3B-Q4_K_M",
+            modelName: "localhost-llm:Qwen3.6-35B-A3B-Q4_K_M",
+            vendorId: "localhost-llm",
             key: "productionAgent",
             name: "生产Agent",
             desc: "对工作流进行调度和管理，建议使用具备较强的逻辑推理和任务管理能力的模型",
+            temperature: 0.7,
+            maxOutputTokens: 4096,
             disabled: false,
           },
           {
-            model: "",
-            modelName: "",
-            vendorId: null,
+            model: "Qwen3.6-35B-A3B-Q4_K_M",
+            modelName: "localhost-llm:Qwen3.6-35B-A3B-Q4_K_M",
+            vendorId: "localhost-llm",
             key: "universalAi",
             name: "通用AI",
             desc: "用于小说事件提取、资产提示词生成、台词提取等边缘功能，建议使用具备较强文本处理能力的模型",
+            temperature: 0.7,
+            maxOutputTokens: 2048,
             disabled: false,
           },
           {
@@ -310,6 +316,10 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
           },
           {
             key: "switchAiDevTool",
+            value: "0",
+          },
+          {
+            key: "agentUseMode",
             value: "0",
           },
         ]);
@@ -615,25 +625,8 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
           // 本地 LLM 供应商
           {
             id: "localhost-llm",
-            inputValues: JSON.stringify({ baseUrl: "http://localhost:8080" }),
-            models: JSON.stringify([
-              { name: "Qwen2.5-7B-Instruct", modelName: "qwen2.5-7b-instruct", type: "text", think: false },
-              { name: "Qwen2.5-14B-Instruct", modelName: "qwen2.5-14b-instruct", type: "text", think: false },
-              { name: "Qwen2.5-32B-Instruct", modelName: "qwen2.5-32b-instruct", type: "text", think: false },
-              { name: "Qwen2.5-72B-Instruct", modelName: "qwen2.5-72b-instruct", type: "text", think: false },
-              { name: "Qwen2.5-Coder-32B-Instruct", modelName: "qwen2.5-coder-32b-instruct", type: "text", think: false },
-              { name: "Llama-3.3-70B-Instruct", modelName: "llama-3.3-70b-instruct", type: "text", think: true },
-              { name: "Llama-3.1-8B-Instruct", modelName: "llama-3.1-8b-instruct", type: "text", think: false },
-              { name: "Llama-3.1-70B-Instruct", modelName: "llama-3.1-70b-instruct", type: "text", think: true },
-              { name: "Mistral-7B-Instruct", modelName: "mistral-7b-instruct", type: "text", think: false },
-              { name: "Mistral-NeMo-12B", modelName: "mistral-nemo-12b", type: "text", think: false },
-              { name: "DeepSeek-R1-Distill-Qwen-7B", modelName: "deepseek-r1-distill-qwen-7b", type: "text", think: true },
-              { name: "DeepSeek-R1-Distill-Qwen-14B", modelName: "deepseek-r1-distill-qwen-14b", type: "text", think: true },
-              { name: "DeepSeek-R1-Distill-Llama-8B", modelName: "deepseek-r1-distill-llama-8b", type: "text", think: true },
-              { name: "Phi-4", modelName: "phi-4", type: "text", think: false },
-              { name: "Phi-3.5-mini", modelName: "phi-3.5-mini-instruct", type: "text", think: false },
-              { name: "Gemma-2-27B", modelName: "gemma-2-27b-it", type: "text", think: false },
-            ]),
+            inputValues: JSON.stringify({ baseUrl: process.env.TOONFLOW_LLM_BASE_URL || "http://localhost:8080" }),
+            models: JSON.stringify([{ name: "Qwen3.6-35B-A3B-Q4_K_M", modelName: "Qwen3.6-35B-A3B-Q4_K_M", type: "text", think: false }]),
             enable: 1,
           },
           // 本地 ComfyUI 供应商
@@ -969,12 +962,29 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
             state: 1,
           },
         ];
-        await Promise.all(
-          list.map(async (item) => {
-            const embedding = await getEmbedding(item.description);
-            item.embedding = JSON.stringify(embedding);
-          }),
-        );
+        const embedWithTimeout = async (text: string, ms: number): Promise<number[]> => {
+          const timer = new Promise<never>((_, reject) => setTimeout(() => reject(new Error("embedding timeout")), ms));
+          return await Promise.race([getEmbedding(text), timer]);
+        };
+        let embeddingWorks = true;
+        try {
+          await embedWithTimeout("probe", 5000);
+        } catch (e) {
+          embeddingWorks = false;
+          console.warn(`[初始化数据库] 跳过 skill embedding（不可用）: ${(e as Error).message}`);
+        }
+        for (const item of list) {
+          if (!embeddingWorks) {
+            item.embedding = "";
+            continue;
+          }
+          try {
+            item.embedding = JSON.stringify(await embedWithTimeout(item.description, 20000));
+          } catch (e) {
+            item.embedding = "";
+            console.warn(`[初始化数据库] 跳过 skill embedding: ${item.name}: ${(e as Error).message}`);
+          }
+        }
         await knex("o_skillList").insert(list);
       },
     },

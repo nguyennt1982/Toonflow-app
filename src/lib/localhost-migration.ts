@@ -14,6 +14,14 @@ import * as fs from "fs";
 import * as path from "path";
 
 // ============================================================
+// 常量配置
+// ============================================================
+
+const LLM_MODEL = "Qwen3.6-35B-A3B-Q4_K_M";
+const LLM_BASE_URL = process.env.TOONFLOW_LLM_BASE_URL || "http://host.docker.internal:8080";
+const LLM_MODELS = [{ name: LLM_MODEL, modelName: LLM_MODEL, type: "text", think: false }];
+
+// ============================================================
 // 读取 vendor 源码
 // ============================================================
 
@@ -56,14 +64,15 @@ export async function registerLocalHostVendors(knex: Knex, vendorDir: string): P
   if (!existingLlm) {
     await knex("o_vendorConfig").insert({
       id: "localhost-llm",
-      inputValues: JSON.stringify({ baseUrl: "http://localhost:8080" }),
-      models: "[]",
+      inputValues: JSON.stringify({ baseUrl: LLM_BASE_URL }),
+      models: JSON.stringify(LLM_MODELS),
       enable: 1,
     });
     console.log("[migration] ✅ Registered vendor: localhost-llm (enabled)");
   } else {
     await knex("o_vendorConfig").where("id", "localhost-llm").update({
-      inputValues: JSON.stringify({ baseUrl: "http://localhost:8080" }),
+      inputValues: JSON.stringify({ baseUrl: LLM_BASE_URL }),
+      models: JSON.stringify(LLM_MODELS),
       enable: 1,
     });
     console.log("[migration] ⚠️ Updated existing vendor: localhost-llm");
@@ -92,10 +101,10 @@ export async function registerLocalHostVendors(knex: Knex, vendorDir: string): P
       id: 100,
       key: "scriptAgent",
       name: "剧本Agent (本地 LLM)",
-      model: "qwen2.5-72b-instruct",
-      modelName: "1:qwen2.5-72b-instruct",
+      model: LLM_MODEL,
+      modelName: `localhost-llm:${LLM_MODEL}`,
       vendorId: "localhost-llm",
-      desc: "用于读取原文生成故事骨架、改编策略。本地 LLM 推荐 qwen2.5-72b-instruct",
+      desc: `用于读取原文生成故事骨架、改编策略。本地 LLM 推荐 ${LLM_MODEL}`,
       temperature: 0.7,
       maxOutputTokens: 4096,
       disabled: false,
@@ -104,10 +113,10 @@ export async function registerLocalHostVendors(knex: Knex, vendorDir: string): P
       id: 101,
       key: "productionAgent",
       name: "生产Agent (本地 LLM)",
-      model: "qwen2.5-72b-instruct",
-      modelName: "1:qwen2.5-72b-instruct",
+      model: LLM_MODEL,
+      modelName: `localhost-llm:${LLM_MODEL}`,
       vendorId: "localhost-llm",
-      desc: "对工作流进行调度和管理。本地 LLM 推荐 qwen2.5-72b-instruct",
+      desc: `对工作流进行调度和管理。本地 LLM 推荐 ${LLM_MODEL}`,
       temperature: 0.7,
       maxOutputTokens: 4096,
       disabled: false,
@@ -116,10 +125,10 @@ export async function registerLocalHostVendors(knex: Knex, vendorDir: string): P
       id: 102,
       key: "universalAi",
       name: "通用AI (本地 LLM)",
-      model: "qwen2.5-14b-instruct",
-      modelName: "1:qwen2.5-14b-instruct",
+      model: LLM_MODEL,
+      modelName: `localhost-llm:${LLM_MODEL}`,
       vendorId: "localhost-llm",
-      desc: "用于小说事件提取、资产提示词生成等边缘功能。本地 LLM 推荐 qwen2.5-14b-instruct",
+      desc: `用于小说事件提取、资产提示词生成等边缘功能。本地 LLM 推荐 ${LLM_MODEL}`,
       temperature: 0.7,
       maxOutputTokens: 2048,
       disabled: false,
@@ -145,19 +154,19 @@ export async function registerLocalHostVendors(knex: Knex, vendorDir: string): P
 
   // --- 5. 注册子 agents 配置 ---
   const childAgents = [
-    { id: 200, key: "scriptAgent:decisionAgent", name: "剧本Agent:决策层 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "决策层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 2048 },
-    { id: 201, key: "scriptAgent:supervisionAgent", name: "剧本Agent:监督层 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "监督层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 1024 },
-    { id: 202, key: "scriptAgent:storySkeletonAgent", name: "剧本Agent:故事骨架 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "故事骨架生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 203, key: "scriptAgent:adaptationStrategyAgent", name: "剧本Agent:改编策略 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "改编策略生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 204, key: "scriptAgent:scriptAgent", name: "剧本Agent:剧本生成 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "剧本生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 8192 },
-    { id: 205, key: "productionAgent:decisionAgent", name: "生产Agent:决策层 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "决策层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 2048 },
-    { id: 206, key: "productionAgent:supervisionAgent", name: "生产Agent:监督层 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "监督层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 1024 },
-    { id: 207, key: "productionAgent:deriveAssetsAgent", name: "生产Agent:衍生资产 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "衍生资产提取 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 208, key: "productionAgent:generateAssetsAgent", name: "生产Agent:生成资产 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "生成资产 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 209, key: "productionAgent:directorPlanAgent", name: "生产Agent:导演规划 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "导演规划 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 210, key: "productionAgent:storyboardGenAgent", name: "生产Agent:分镜生成 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "分镜生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 211, key: "productionAgent:storyboardPanelAgent", name: "生产Agent:分镜面板 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "分镜面板生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
-    { id: 212, key: "productionAgent:storyboardTableAgent", name: "生产Agent:分镜表格 (本地)", model: "qwen2.5-72b-instruct", modelName: "2:qwen2.5-72b-instruct", vendorId: "localhost-llm", desc: "分镜表格生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 200, key: "scriptAgent:decisionAgent", name: "剧本Agent:决策层 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "决策层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 2048 },
+    { id: 201, key: "scriptAgent:supervisionAgent", name: "剧本Agent:监督层 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "监督层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 1024 },
+    { id: 202, key: "scriptAgent:storySkeletonAgent", name: "剧本Agent:故事骨架 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "故事骨架生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 203, key: "scriptAgent:adaptationStrategyAgent", name: "剧本Agent:改编策略 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "改编策略生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 204, key: "scriptAgent:scriptAgent", name: "剧本Agent:剧本生成 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "剧本生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 8192 },
+    { id: 205, key: "productionAgent:decisionAgent", name: "生产Agent:决策层 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "决策层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 2048 },
+    { id: 206, key: "productionAgent:supervisionAgent", name: "生产Agent:监督层 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "监督层 - 本地 LLM", temperature: 0.7, maxOutputTokens: 1024 },
+    { id: 207, key: "productionAgent:deriveAssetsAgent", name: "生产Agent:衍生资产 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "衍生资产提取 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 208, key: "productionAgent:generateAssetsAgent", name: "生产Agent:生成资产 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "生成资产 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 209, key: "productionAgent:directorPlanAgent", name: "生产Agent:导演规划 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "导演规划 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 210, key: "productionAgent:storyboardGenAgent", name: "生产Agent:分镜生成 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "分镜生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 211, key: "productionAgent:storyboardPanelAgent", name: "生产Agent:分镜面板 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "分镜面板生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
+    { id: 212, key: "productionAgent:storyboardTableAgent", name: "生产Agent:分镜表格 (本地)", model: LLM_MODEL, modelName: `localhost-llm:${LLM_MODEL}`, vendorId: "localhost-llm", desc: "分镜表格生成 - 本地 LLM", temperature: 0.7, maxOutputTokens: 4096 },
   ];
 
   for (const agent of childAgents) {
@@ -196,10 +205,10 @@ export async function registerLocalHostVendors(knex: Knex, vendorDir: string): P
 
   console.log("\n[migration] ✅ 本地 LLM 注册完成！");
   console.log("[migration] 📋 下一步：");
-  console.log("[migration]   1. 确保 llama-server 运行在 http://localhost:8080");
+  console.log(`[migration]   1. 确保 llama-server 运行在 ${LLM_BASE_URL}`);
   console.log("[migration]   2. 确保 ComfyUI 运行在 http://localhost:8188");
   console.log("[migration]   3. 在 Toonflow UI 中检查 Agent Deploy 配置");
-  console.log("[migration]   4. 测试文本生成：ai.Text('1:qwen2.5-72b-instruct').invoke({ prompt })");
+  console.log(`[migration]   4. 测试文本生成：ai.Text('localhost-llm:${LLM_MODEL}').invoke({ prompt })`);
 }
 
 // 如果直接运行此文件
@@ -209,11 +218,11 @@ if (require.main === module) {
       const knex = require("knex")({
         client: "better-sqlite3",
         connection: {
-          filename: "./data/toonflow.db",
+          filename: "./data/db2.sqlite",
         },
       });
 
-      const vendorDir = path.join(__dirname, "../../vendor");
+      const vendorDir = path.join(process.cwd(), "data", "vendor");
       await registerLocalHostVendors(knex, vendorDir);
 
       await knex.destroy();
