@@ -612,6 +612,48 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
             models: "[]",
             enable: 0,
           },
+          // 本地 LLM 供应商
+          {
+            id: "localhost-llm",
+            inputValues: JSON.stringify({ baseUrl: "http://localhost:8080" }),
+            models: JSON.stringify([
+              { name: "Qwen2.5-7B-Instruct", modelName: "qwen2.5-7b-instruct", type: "text", think: false },
+              { name: "Qwen2.5-14B-Instruct", modelName: "qwen2.5-14b-instruct", type: "text", think: false },
+              { name: "Qwen2.5-32B-Instruct", modelName: "qwen2.5-32b-instruct", type: "text", think: false },
+              { name: "Qwen2.5-72B-Instruct", modelName: "qwen2.5-72b-instruct", type: "text", think: false },
+              { name: "Qwen2.5-Coder-32B-Instruct", modelName: "qwen2.5-coder-32b-instruct", type: "text", think: false },
+              { name: "Llama-3.3-70B-Instruct", modelName: "llama-3.3-70b-instruct", type: "text", think: true },
+              { name: "Llama-3.1-8B-Instruct", modelName: "llama-3.1-8b-instruct", type: "text", think: false },
+              { name: "Llama-3.1-70B-Instruct", modelName: "llama-3.1-70b-instruct", type: "text", think: true },
+              { name: "Mistral-7B-Instruct", modelName: "mistral-7b-instruct", type: "text", think: false },
+              { name: "Mistral-NeMo-12B", modelName: "mistral-nemo-12b", type: "text", think: false },
+              { name: "DeepSeek-R1-Distill-Qwen-7B", modelName: "deepseek-r1-distill-qwen-7b", type: "text", think: true },
+              { name: "DeepSeek-R1-Distill-Qwen-14B", modelName: "deepseek-r1-distill-qwen-14b", type: "text", think: true },
+              { name: "DeepSeek-R1-Distill-Llama-8B", modelName: "deepseek-r1-distill-llama-8b", type: "text", think: true },
+              { name: "Phi-4", modelName: "phi-4", type: "text", think: false },
+              { name: "Phi-3.5-mini", modelName: "phi-3.5-mini-instruct", type: "text", think: false },
+              { name: "Gemma-2-27B", modelName: "gemma-2-27b-it", type: "text", think: false },
+            ]),
+            enable: 1,
+          },
+          // 本地 ComfyUI 供应商
+          {
+            id: "localhost-comfyui",
+            inputValues: JSON.stringify({ baseUrl: "http://localhost:8188", maxRetries: "3" }),
+            models: JSON.stringify([
+              // 图像模型
+              { name: "Flux2-Klein", modelName: "flux2-klein", type: "image", mode: ["text", "singleImage", "multiReference"] },
+              { name: "SDXL Turbo", modelName: "sdxl-turbo", type: "image", mode: ["text", "singleImage"] },
+              { name: "SD 1.5", modelName: "sd1.5", type: "image", mode: ["text", "singleImage", "multiReference"] },
+              { name: "Flux-dev", modelName: "flux-dev", type: "image", mode: ["text", "singleImage", "multiReference"] },
+              // 视频模型
+              { name: "LTX-2.3 (Video)", modelName: "ltx2.3", type: "video", mode: ["text", "singleImage", "startEndRequired", "startFrameOptional"], audio: "optional", durationResolutionMap: [{ duration: [2, 4, 6, 8], resolution: ["720p", "1080p"] }] },
+              { name: "Wan2.6 (Video)", modelName: "wan2.6", type: "video", mode: ["singleImage", "startEndRequired", "startFrameOptional"], audio: "optional", durationResolutionMap: [{ duration: [4, 5, 6, 7, 8, 10, 12], resolution: ["480p", "720p", "1080p"] }] },
+              { name: "Seedance 2.0", modelName: "seedance-2.0", type: "video", mode: ["text", "singleImage", "startFrameOptional"], audio: "optional", durationResolutionMap: [{ duration: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], resolution: ["480p", "720p"] }] },
+              { name: "Kling Video", modelName: "kling", type: "video", mode: ["singleImage", "startEndRequired"], audio: false, durationResolutionMap: [{ duration: [5, 10], resolution: ["720p"] }] },
+            ]),
+            enable: 1,
+          },
         ]);
       },
     },

@@ -32,7 +32,15 @@
     "dist:linux": "yarn build && electron-builder --linux",
     "debug:ai": "npx @ai-sdk/devtools",
     "license": "node scripts/license.ts",
-    "vendor2json": "node scripts/vendor2json.ts"
+    "vendor2json": "node scripts/vendor2json.ts",
+    "index:generate": "tsx scripts/generate-code-index.ts",
+    "index:check": "tsx scripts/check-index-stale.ts",
+    "index:embed": "tsx scripts/generate-embeddings.ts",
+    "index:search": "tsx scripts/search-code.ts",
+    "kb:backup": "bash scripts/kb-backup.sh",
+    "kb:restore": "bash scripts/kb-restore.sh",
+    "docs:routes": "tsx scripts/generate-routes-map.ts",
+    "docs:data-model": "tsx scripts/generate-data-model.ts"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.35",
