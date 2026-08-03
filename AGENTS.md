@@ -62,6 +62,7 @@ This container is **ephemeral** (Hermes creates it; everything not pushed to git
 git clone https://github.com/nguyennt1982/Toonflow-app.git
 cd Toonflow-app
 yarn install          # gets tsx, @huggingface/transformers, onnxruntime-web, etc.
+npm install -g opencode-ai   # put `opencode` on PATH (/usr/local/bin) — required for Hermes delegation
 yarn kb:restore       # fetch kb-index → restore stores → rebuild derived indexes (~30s)
 yarn index:check      # verify FRESH
 yarn index:search "..."  # sanity-check a semantic query

@@ -84,6 +84,7 @@ Run when a new container is created or after a teardown:
 git clone https://github.com/nguyennt1982/Toonflow-app.git
 cd Toonflow-app
 yarn install                 # tsx, @huggingface/transformers, onnxruntime-web, etc.
+npm install -g opencode-ai   # put `opencode` on PATH (/usr/local/bin) — required for delegation
 yarn kb:restore              # fetch kb-index → restore stores → rebuild derived indexes
 yarn index:check             # must print FRESH
 yarn index:search "socket auth middleware"   # sanity: returns ranked file:line hits
