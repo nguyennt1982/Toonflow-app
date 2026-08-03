@@ -54,6 +54,19 @@ This container is **ephemeral** (Hermes creates it; everything not pushed to git
 
 **`origin` = the fork `nguyennt1982/Toonflow-app`, NOT upstream `HBAI-Ltd/Toonflow-app`. Never push to the upstream repo.**
 
+### Recovery runbook (fresh container after teardown)
+
+```bash
+git clone https://github.com/nguyennt1982/Toonflow-app.git
+cd Toonflow-app
+yarn install          # gets tsx, @huggingface/transformers, onnxruntime-web, etc.
+yarn kb:restore       # fetch kb-index → restore stores → rebuild derived indexes (~30s)
+yarn index:check      # verify FRESH
+yarn index:search "..."  # sanity-check a semantic query
+```
+
+Survives in git: all source, `scripts/`, `docs/business/`, `AGENTS.md`, npm scripts (master) + embedding stores (kb-index). Everything else dies with the container: `data/db2.sqlite`, `data/oss/`, `data/web/`, `node_modules`, uncommitted work, and **any embeddings embedded after the last `yarn kb:backup`** (run `yarn kb:backup` again if you re-embedded after a snapshot).
+
 ## Architecture
 
 No DI, no service layer. Thin, imperative handlers around a shared `u` utility + SQLite. Three channels:
