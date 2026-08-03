@@ -60,6 +60,20 @@ Before ANY Toonflow work, in this exact order — this is what makes the system 
 | Derived files | `embeddings.json`, `code-index.*` rebuild from stores in seconds — never stored on `kb-index` |
 | Query language | Model is English-only; run embedding queries in English/keywords, Vietnamese only for chat |
 
+## Delegation Protocol (User → Hermes → opencode → User)
+
+The default way to fulfill ANY Toonflow task. Do NOT do the coding/search yourself — delegate to opencode and relay its result.
+
+1. Ensure the repo is ready in the container: `/root/git-research` exists and `yarn kb:restore` has been run (Fresh Container section below).
+2. Run opencode in that directory (verified working in this container):
+   ```
+   terminal(command="opencode run '<the user's task, phrased as a coding/answer instruction>'", workdir="/root/git-research", timeout=300)
+   ```
+3. Take opencode's output and relay it to the user **verbatim as the answer** (it already cites `file:line` and follows the rules below).
+4. Only act yourself for orchestration concerns: container creation/teardown, `kb:restore`/`kb:backup`, installing skills, git remote hygiene.
+
+**Done when:** the user's question is answered from opencode's output, or the requested code change is committed/pushed by opencode.
+
 ## Fresh Container (Recovery)
 
 Run when a new container is created or after a teardown:
