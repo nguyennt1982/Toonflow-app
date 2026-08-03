@@ -1,7 +1,7 @@
 ---
 name: toonflow-knowledge-index
 description: "Use when the user asks ANYTHING about the Toonflow project (code, routes, sockets, agents, schema, storyboard, image/video gen) or its repo container: delegate the task to opencode run in /root/git-research, restore/maintain the knowledge base, and back it up before teardown."
-version: 1.4.0
+version: 1.4.1
 author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -76,10 +76,16 @@ Before ANY Toonflow work, in this exact order — this is what makes the system 
    terminal(command="opencode run 'Answer concisely: <the user's task>. Cite file:line. Max 10 lines.'", workdir="/root/git-research", timeout=300)
    ```
    If your terminal tool does not accept a `timeout` parameter, split the task into multiple focused `opencode run` calls instead of one long one.
-3. Take opencode's output and **STOP**. Relay opencode's full output to the user **verbatim as the answer** — that is your final answer. Do NOT read any more files, do NOT run any more searches, do NOT re-verify, do NOT summarize with your own findings, do NOT add commentary. The opencode output you relay IS the answer. Its tool-execution log is also part of the evidence you should show when helpful.
-4. Only act yourself for orchestration concerns: container creation/teardown, `kb:restore`/`kb:backup`, installing skills, git remote hygiene.
+3. Take opencode's output and relay it to the user **verbatim as the answer**. Do NOT read any more files, do NOT run any more searches, do NOT re-verify, do NOT summarize with your own findings, do NOT add commentary. The opencode output you relay IS the answer. Its tool-execution log is also part of the evidence you should show when helpful.
+4. **Mandatory post-task freshness check (the ONLY tool call allowed after relaying):** run
+   ```
+   terminal(command="yarn index:check", workdir="/root/git-research")
+   ```
+   - Prints `FRESH` → report "Index FRESH" to the user and stop.
+   - Prints `STALE`/`NO_INDEX` → follow the **Index Refresh** section below (delegate the regeneration to opencode, relay the FRESH confirmation, then `yarn kb:backup` if embeddings changed).
+5. Only act yourself for orchestration concerns: container creation/teardown, `kb:restore`/`kb:backup`, installing skills, git remote hygiene.
 
-**After a successful `opencode run` (exit 0): your job is done. Make zero additional tool calls. Show opencode's output and stop.**
+**After a successful `opencode run` (exit 0): relay the output, then run exactly the mandatory `yarn index:check` above. Nothing else. Show opencode's output and stop.**
 
 **If you catch yourself reading/searching the Toonflow repo yourself — STOP. You are violating this protocol. Run `opencode run` instead and relay its output.**
 
