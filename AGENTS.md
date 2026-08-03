@@ -45,6 +45,15 @@ Covers `src/**/*.ts`, `scripts/**/*.ts`, `data/skills/**/*.md`, `data/vendor/**/
 
 If you change routes, agents, skills, or the DB schema, regenerate the docs (`yarn index:generate && yarn docs:routes && yarn docs:data-model`) so this knowledge stays in sync.
 
+## Container backup / restore
+
+This container is **ephemeral** (Hermes creates it; everything not pushed to git dies with it). The knowledge base is the expensive part (full embedding rebuild ≈ 10 min), so it's snapshotted to the fork's `kb-index` branch:
+
+- `yarn kb:backup` — ensures embeddings are fresh, then force-pushes a snapshot of `.opencode/index/embeddings/` + `embeddings.manifest.json` + `embeddings.meta.json` to `origin/kb-index` (orphan branch, only those files). Derived files (`embeddings.json`, `code-index.*`) are NOT stored — they rebuild in seconds.
+- `yarn kb:restore` — fetches `origin/kb-index`, restores the stores, then rebuilds derived indexes (`index:generate` + `index:embed` + `index:check`). Run in a fresh container before knowledge work (~30s).
+
+**`origin` = the fork `nguyennt1982/Toonflow-app`, NOT upstream `HBAI-Ltd/Toonflow-app`. Never push to the upstream repo.**
+
 ## Architecture
 
 No DI, no service layer. Thin, imperative handlers around a shared `u` utility + SQLite. Three channels:
