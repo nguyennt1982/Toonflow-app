@@ -2,6 +2,15 @@
 
 > **BANNER — read first.** All Toonflow work MUST run with this directory (`/root/git-research`) as the working directory so this file and the knowledge base load automatically. Never raw-grep the whole tree for code questions — use `.opencode/index/code-index.txt` or `yarn index:search` (see "Code index" below). Never push to the upstream `HBAI-Ltd/Toonflow-app`; `origin` is the fork `nguyennt1982/Toonflow-app`.
 
+## Working Protocol (mandatory)
+
+Every change to this repo MUST follow these four steps in order:
+
+1. **Plan** — present the plan (what will be edited, where, why) before touching any file.
+2. **Confirm** — wait for explicit user approval before implementing.
+3. **Implement** — make the changes.
+4. **Push** — do NOT commit/push until explicitly asked and approved. After implementing, ask whether to push.
+
 AI short-drama / manhua production tool. Converts a **novel** into **scripts**, **storyboards**, and AI-generated **images/videos** via LLM agents. Electron desktop app + local Express backend.
 
 Stack: TypeScript, Express 5, Socket.io, SQLite via knex + better-sqlite3, Vercel AI SDK (`ai`), vm2 sandbox, sharp.
