@@ -12,6 +12,7 @@ yarn index:embed
 
 SNAPSHOT_DIR="/tmp/kb-wt"
 rm -rf "$SNAPSHOT_DIR"
+trap 'rm -rf "$SNAPSHOT_DIR"' EXIT
 git clone -q "$ROOT" "$SNAPSHOT_DIR"
 cd "$SNAPSHOT_DIR"
 

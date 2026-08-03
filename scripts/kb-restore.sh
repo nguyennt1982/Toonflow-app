@@ -9,6 +9,7 @@ WORK="/tmp/kb-restore"
 
 echo "[kb:restore] fetching snapshot from $ORIGIN_URL kb-index..."
 rm -rf "$WORK"
+trap 'rm -rf "$WORK"' EXIT
 mkdir -p "$WORK"
 git -C "$WORK" init -q
 git -C "$WORK" remote add origin "$ORIGIN_URL"
